@@ -1,4 +1,5 @@
 let controller = new AbortController();
+let signal = controller.signal;
 
 const addMessage = (message) => {
   const m = document.getElementById('message');
@@ -17,7 +18,6 @@ const addMessage = (message) => {
 }
 
 const fetchMovie = async () => {
-  const signal = controller.signal;
   const url = new URL(`${location.origin}/monaka/lab/abortcontroller/sample.mp4`);
   const headers = new Headers();
   headers.append('X-Requested-With','XMLHttpRequest');
@@ -34,11 +34,20 @@ const fetchMovie = async () => {
 
 }
 
-window.addEventListener('DOMContentLoaded',  () => {
+const sleep = async () => {
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  await sleep(5 * 1000);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+
   const abortBtn = document.getElementById('abort');
   abortBtn.addEventListener('click', () => {
     controller.abort();
-    addMessage("Download aborted");
+
+    if (signal.aborted) {
+      addMessage("Download aborted");
+    }
   });
 
   const downloadBtn = document.getElementById('download');
@@ -46,9 +55,12 @@ window.addEventListener('DOMContentLoaded',  () => {
     addMessage("Download start");
 
     controller = new AbortController();
+    signal = controller.signal;
+    signal.addEventListener('abort', () => {
+      console.debug('abort!');
+    })
 
-    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    await sleep(5 * 1000);
+    await sleep();
 
     fetchMovie().then(data => {
       console.debug(data);
@@ -59,4 +71,35 @@ window.addEventListener('DOMContentLoaded',  () => {
       controller = null;
     })
   });
+
 });
+
+
+// 複数
+{
+ const urls = [];
+ const controller = new AbortController();
+ const fetches = urls.map(async(url) => {
+  await fetch(url, {
+    signal: controller.signal
+  })
+ });
+ const results = await Promise.all(fetches);
+ // controller.abort();
+}
+
+// 別々一括
+{
+  const urls = [];
+  const controller = new AbortController();
+  const f1 = new Promise((resolve, reject) => {
+    controller.signal.addEventListener('abort', reject);
+  })
+  const f2 = urls.map(async(url) => {
+    await fetch(url, {
+      signal: controller.signal
+    })
+   });
+   const results = await Promise.all(f2,f1);
+   // controller.abort();
+}

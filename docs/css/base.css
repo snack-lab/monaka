@@ -1,5 +1,26 @@
 @charset "UTF-8";
 
+:root {
+  --color-bg: #f9f9f9;
+  --color-text: #333333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --color-bg: #333333;
+    --color-text: #ffffff; */
+  }
+}
+
+/* motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+
 *,
 *:before,
 *:after {
@@ -8,6 +29,8 @@
 
 body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
   padding: 0;
 }
