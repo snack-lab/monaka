@@ -5,10 +5,6 @@ customElements.define('m-header', HeaderElement);
 
 document.addEventListener('readystatechange', (event) => {
   console.debug(document.readyState);
-
-  if (document.readyState === "complete") {
-    document.body.classList.remove('no-fouc');
-  }
 });
 
 

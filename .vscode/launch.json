@@ -1,33 +1,28 @@
 {
-  "version": "1.0.0",
+  // https://github.com/microsoft/vscode-js-debug#readme
+  "version": "0.2.0",
   "configurations": [
-
     {
-      "name": "Attach to Chrome",
-      "type": "chrome",
-      "request": "attach",
-      "port": 9222,
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "Launch Chrome",
-      "type": "chrome",
-      "request": "launch",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "Launch firefox",
       "type": "firefox",
       "request": "launch",
       "reAttach": true,
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
+      "name": "Launch firefox localhost",
+      "url": "http://localhost:3000/monaka/",
+      "webRoot": "${workspaceFolder}/docs"
     },
     {
-      "name": "Attach to firefox",
-      "type": "firefox",
-      "request": "attach"
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "pwa-msedge",
+      "url": "http://localhost:3000/monaka/",
+      "webRoot": "${workspaceFolder}/docs"
+    },
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000/monaka/",
+      "webRoot": "${workspaceFolder}/docs"
     }
   ]
 }
