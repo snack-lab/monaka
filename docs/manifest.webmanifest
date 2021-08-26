@@ -29,8 +29,20 @@
   ],
   "start_url": "index.html",
   "background_color": "#fff",
+  "display_override": ["minimal-ui"],
   "display": "standalone",
+  "orientation": "portrait-primary",
   "scope": "/monaka/",
   "theme_color": "#1a6ccc",
-  "description": "monaka github page"
+  "shortcuts": [
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "About Monaka",
+      "url": "/about.html",
+      "icons": [{ "src": "/images/icons-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "monaka github page",
+  "screenshots": []
 }
