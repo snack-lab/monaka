@@ -39,8 +39,8 @@
       "name": "About",
       "short_name": "About",
       "description": "About Monaka",
-      "url": "/about.html",
-      "icons": [{ "src": "/images/icons-192.png", "sizes": "192x192" }]
+      "url": "/monaka/about.html",
+      "icons": [{ "src": "/monaka/images/icons-192.png", "sizes": "192x192" }]
     }
   ],
   "description": "monaka github page",

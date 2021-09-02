@@ -8,7 +8,7 @@ const CACHE_LIST = [
   `${APP_SCOPE}about.html`,
   `${APP_SCOPE}404.html`,
   `${APP_SCOPE}config.js`,
-  `${APP_SCOPE}manifest.json`,
+  `${APP_SCOPE}manifest.webmanifest`,
   `${APP_SCOPE}css/app.css`,
   `${APP_SCOPE}css/base.css`,
   `${APP_SCOPE}js/app.js`,
