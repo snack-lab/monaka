@@ -1,4 +1,3 @@
-import { APP_HOME } from '../../config.js';
 import LogoElement from './logo/logo.js';
 import NavElement from './navi/nav.js';
 

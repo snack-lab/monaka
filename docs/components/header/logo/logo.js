@@ -1,6 +1,5 @@
 
-import { APP_HOME } from '../../../config.js';
-
+import config from '../../../js/config.json' assert {type: 'json'};
 import styles from './logo.css' assert { type: 'css' };
 export default class LogoElement extends HTMLElement {
 
@@ -21,7 +20,7 @@ export default class LogoElement extends HTMLElement {
     const template = document.createElement('template');
     template.innerHTML = `
       <h1 class="logo">
-        <a href="${APP_HOME}">${this.siteName}</a>
+        <a href="${location.origin}${config.app_scope}">${this.siteName}</a>
       </h1>
     `;
 

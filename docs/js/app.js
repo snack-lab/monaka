@@ -1,5 +1,4 @@
-import { APP_SCOPE } from '../config.js';
-
+import config from './config.json' assert {type: 'json'};
 import HeaderElement from '../components/header/header.js';
 customElements.define('m-header', HeaderElement);
 
@@ -15,7 +14,7 @@ window.addEventListener("beforeinstallprompt", async (e) => {
 
 window.addEventListener('DOMContentLoaded', () => {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register(`${APP_SCOPE}service-worker.js`, { type: 'module', scope: `${APP_SCOPE}`})
+    navigator.serviceWorker.register(`${config.app_scope}service-worker.js`, { type: 'module', scope: `${config.app_scope}`})
     .then((registration) => {
       let sw = registration.installing || registration.waiting || registration.active;
       console.debug(`service worker: ${sw.state} `, registration.scope);

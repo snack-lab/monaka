@@ -1,12 +1,11 @@
-import { APP_HOME } from '../../../config.js';
-
+import config from '../../../js/config.json' assert {type: 'json'};
 import styles from './nav.css' assert { type: 'css' };
 
 export default class NavElement extends HTMLElement {
 
   #root;
   #navilist = [
-    {text: 'Home', href: `${APP_HOME}`},
+    {text: 'Home', href: `${location.origin}${config.app_scope}`},
     {text: 'About', href: 'about.html'}
   ];
 
