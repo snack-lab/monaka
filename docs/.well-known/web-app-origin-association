@@ -1,0 +1,10 @@
+{
+  "web_apps": [
+    {
+      "manifest": "https://dragonhead.github.io/monaka/manifest.webmanifest",
+      "details": {
+        "paths": ["/*"]
+      }
+    }
+  ]
+}

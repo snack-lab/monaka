@@ -46,5 +46,10 @@
   ],
   "description": "monaka github page",
   "screenshots": [],
-  "capture_links": "new-client"
+  "capture_links": "new-client",
+  "url_handlers": [
+    {
+      "origin": "https://dragonhead.github.io"
+    }
+  ]
 }
