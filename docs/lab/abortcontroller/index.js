@@ -18,7 +18,7 @@ const addMessage = (message) => {
 }
 
 const fetchMovie = async () => {
-  const url = new URL(`${location.origin}/monaka/lab/abortcontroller/sample.mp4`);
+  const url = new URL(`./sample.mp4`, import.meta.url);
   const headers = new Headers();
   headers.append('X-Requested-With','XMLHttpRequest');
   const init = {

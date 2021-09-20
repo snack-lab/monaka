@@ -1,5 +1,5 @@
 if (window.Worker) {
-  const worker = new Worker('worker/worker.js', { type: 'module' });
+  const worker = new Worker(new URL('worker/worker.js', import.meta.url), { type: 'module' });
   worker.postMessage({ message: 'Message posted to worker' });
 
   worker.addEventListener('message', (event) => {
