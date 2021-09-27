@@ -1,15 +1,7 @@
 .some-class {
-  /**
-   * Use a margin that corresponds to the virtual keyboard's height
-   * if the virtual keyboard is shown, else use the fallback value of `50px`.
-   */
   margin-block-end: env(keyboard-inset-height, 50px);
 }
 
 .some-other-class {
-  /**
-   * Use a margin that corresponds to the virtual keyboard's height
-   * if the virtual keyboard is shown, else use the default fallback value of `0px`.
-   */
   margin-block-end: env(keyboard-inset-height);
 }

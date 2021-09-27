@@ -5,16 +5,11 @@
 <title>Virtual Keyboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="index.css">
-<script src="index.js" async></script>
+<script type="module" src="index.js" async></script>
 </head>
 <body>
 <h1>Virtual Keyboard</h1>
-<div
-  contenteditable
-  virtualkeyboardpolicy="manual"
-  inputmode="text"
-  ondblclick="navigator.virtualKeyboard.show();"
->
+<div id="v-edit" contenteditable virtualkeyboardpolicy="manual" inputmode="text">
   Double-click to edit.
 </div>
 </body>
