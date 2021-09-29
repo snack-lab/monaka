@@ -1,6 +1,10 @@
+// https://github.com/WICG/shape-detection-api
+// https://wicg.github.io/shape-detection-api
+
 const detect = async (image) => {
   const supported = await (
     async () =>
+     'Worker' in window &&
      'BarcodeDetector' in window &&
      ((await BarcodeDetector.getSupportedFormats()).includes('qr_code')) &&
       await new BarcodeDetector().detect(document.createElement('canvas'))
@@ -9,20 +13,13 @@ const detect = async (image) => {
     )();
 
   if (supported) {
-    console.debug('QR code scanning is supported.');
-
     const supportedFormats = await BarcodeDetector.getSupportedFormats();
+    console.debug('QR code scanning is supported.');
     console.debug('support formats', supportedFormats);
 
-    const barcodeDetector = new BarcodeDetector({formats: ['qr_code']});
     if (image) {
-      try {
-        const barcodes = await barcodeDetector.detect(image);
-
-        barcodes.forEach(barcode => console.debug(barcode));
-      } catch (e) {
-        console.error('Barcode detection failed:', e);
-      }
+      const worker = new Worker(new URL('worker.js', import.meta.url), { type: 'module' });
+      worker.postMessage({ qrcode: image });
     }
   } else {
     alert('Your browser doesn\'t support!');
