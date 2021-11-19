@@ -27,7 +27,7 @@
       "purpose": "maskable"
     }
   ],
-  "id": "index.html",
+  "id": "index.html?homescreen=1",
   "start_url": "index.html",
   "background_color": "#fff",
   "display_override": ["minimal-ui"],
@@ -50,6 +50,12 @@
   "url_handlers": [
     {
       "origin": "https://dragonhead.github.io"
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+about",
+      "url": "/monaka/about.html"
     }
   ]
 }
