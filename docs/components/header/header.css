@@ -1,15 +1,31 @@
 @charset "utf-8";
 
 .header {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 8px;
-    background: #1a6ccc;
+  align-items: center;
+  background: #1a6ccc;
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1;
+  grid-row: 1;
+  padding: 0 8px;
 }
 
 .header .nv {
-    margin-left: auto;
+  margin-left: auto;
 }
+
+/* window controls overlay sample */
+.header {
+  -webkit-app-region: drag;
+  app-region: drag;
+  height: env(titlebar-area-height, 50px);
+  left: env(titlebar-area-x, 0);
+  position: fixed;
+  top: env(titlebar-area-y, 0);
+  width: env(titlebar-area-width, 100%);
+}
+
+/* input {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+} */

@@ -1,26 +1,28 @@
-import LogoElement from './logo/logo.js';
-import NavElement from './navi/nav.js';
+import LogoElement from "./logo/logo.js";
+import NavElement from "./navi/nav.js";
 
-import styles from './header.css' assert { type: 'css' };
+import styles from "./header.css" assert { type: "css" };
 
-customElements.define('m-logo', LogoElement);
-customElements.define('m-nav', NavElement);
+customElements.define("m-logo", LogoElement);
+customElements.define("m-nav", NavElement);
 
 export default class HeaderElement extends HTMLElement {
-
   #root;
 
   constructor() {
     super();
-    this.#root = this.attachShadow({mode: 'open'});
+    this.#root = this.attachShadow({ mode: "open" });
     this.#root.adoptedStyleSheets = [...this.#root.adoptedStyleSheets, styles];
     this.#root.appendChild(this.#template());
   }
 
   connectedCallback() {
+    if ("windowControlsOverlay" in navigator) {
+      console.log("supported window controls overlay");
+    }
   }
   #template() {
-    const template = document.createElement('template');
+    const template = document.createElement("template");
     template.innerHTML = `
     <header class="header">
       <m-logo></m-logo>
