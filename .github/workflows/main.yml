@@ -1,15 +1,22 @@
-name: Deploy
+name: "Deploy"
 
 on:
- push:
-  branches:
-    - main
-permissions:
-  contents: read
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build_and_deploy:
+    name: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    strategy:
+      matrix:
+        language: ["javascript"]
+
     steps:
-      - uses: actions/checkout@v2
-      - run: npm ci
+      - name: Checkout repository
+        uses: actions/checkout@v2

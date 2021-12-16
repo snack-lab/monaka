@@ -1,0 +1,17 @@
+version: "3"
+services:
+  monaka:
+    build:
+      context: .
+      dockerfile: ./docker/nodejs/Dockerfile
+    user: monakadev
+    command: "npm start"
+    environment:
+      NODE_ENV: development
+    ports:
+      - "8888:3000"
+    volumes:
+      - ./src:/home/monakadev/monaka/src
+      - ./docs:/home/monakadev/monaka/docs
+      - ./.vscode:/home/monakadev/monaka/.vscode
+      - /home/monakadev/monaka/src/node_modules

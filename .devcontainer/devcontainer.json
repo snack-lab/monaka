@@ -1,10 +1,8 @@
 {
   "name": "Monaka Docker Compose (Remote)",
-  "dockerComposeFile": [
-    "../docker-compose.yml"
-  ],
+  "dockerComposeFile": ["../docker-compose.yml"],
   "service": "monaka",
-  "workspaceFolder": "/home/app",
+  "workspaceFolder": "/home/monakadev/monaka",
   "extensions": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
