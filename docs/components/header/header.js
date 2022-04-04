@@ -12,7 +12,7 @@ export default class HeaderElement extends HTMLElement {
   constructor() {
     super();
     this.#root = this.attachShadow({ mode: "open" });
-    this.#root.adoptedStyleSheets = [...this.#root.adoptedStyleSheets, styles];
+    this.#root.adoptedStyleSheets.push(styles);
     this.#root.appendChild(this.#template());
   }
 
