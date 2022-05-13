@@ -12,5 +12,4 @@ services:
     volumes:
       - ./src:/home/monakadev/monaka/src
       - ./docs:/home/monakadev/monaka/docs
-      - ./.vscode:/home/monakadev/monaka/.vscode
       - /home/monakadev/monaka/src/node_modules
