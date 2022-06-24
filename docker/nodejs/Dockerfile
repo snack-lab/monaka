@@ -1,6 +1,7 @@
-FROM node:18.3.0-slim
+FROM node:18.4.0-slim
 
-RUN apt-get update
+RUN apt-get update \
+ && apt-get install -y wget
 
 RUN useradd --user-group --create-home --shell /bin/bash monakadev
 ENV HOME=/home/monakadev

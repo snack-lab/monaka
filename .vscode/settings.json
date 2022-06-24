@@ -1,15 +1,13 @@
 {
+  "breadcrumbs.enabled": true,
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": true,
   "editor.suggestSelection": "first",
-  "breadcrumbs.enabled": true,
-  "files.insertFinalNewline": true,
   "editor.fontLigatures": true,
   "editor.renderLineHighlight": "all",
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorStyle": "block",
-  "files.autoGuessEncoding": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.wordWrapColumn": 120,
   "editor.formatOnSave": true,
@@ -17,5 +15,12 @@
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.insertFinalNewline": true,
+  "files.autoGuessEncoding": true,
+  // hadolint
+  "hadolintPath": "hadolint",
+  "cliOptions": ["--no-color", "--ignore", "DL3000"],
+  "maxNumberOfProblems": 100,
+  "outputLevel": "warning"
 }
