@@ -1,57 +1,73 @@
 {
-  "short_name": "monaka",
+  "id": "/monaka/",
+  "scope": "/monaka/",
+  "start_url": "/monaka/",
   "name": "monaka",
+  "short_name": "monaka",
+  "lang": "ja-JP",
+  "dir": "ltr",
+  "theme_color": "#1a6ccc",
+  "background_color": "#fff",
+  "description": "monaka github page",
+  "categories": ["github","page"],
   "icons": [
     {
-      "src": "images/icons-192.png",
+      "src": "images/icons/icons-192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "images/icons-512.png",
+      "src": "images/icons/icons-512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "images/icons-192.svg",
+      "src": "images/icons/icons-192.svg",
       "type": "image/svg+xml",
       "sizes": "192x192",
       "purpose": "maskable"
     },
     {
-      "src": "images/icons-512.svg",
+      "src": "images/icons/icons-512.svg",
       "type": "image/svg+xml",
       "sizes": "512x512",
       "purpose": "maskable"
     }
   ],
-  "id": "index.html",
-  "start_url": "index.html",
-  "background_color": "#fff",
   "display_override": ["window-controls-overlay", "minimal-ui"],
   "display": "standalone",
   "orientation": "portrait-primary",
-  "scope": "/monaka/",
-  "theme_color": "#1a6ccc",
+  "screenshots": [
+    {
+      "src": "./images/screenshots/screenshots.png",
+      "sizes": "500x320",
+      "type": "image/gpng",
+      "platform": "android",
+      "label": "Monaka Github Page"
+    }
+  ],
   "shortcuts": [
     {
       "name": "About",
       "short_name": "About",
       "description": "About Monaka",
       "url": "/monaka/about.html",
-      "icons": [{ "src": "/monaka/images/icons-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "./images/shortcuts/shortcuts.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ],
-  "description": "monaka github page",
-  "screenshots": [
-    {
-      "src": "image/screenshot1.gif",
-      "sizes": "640x640",
-      "type": "image/gpng"
-    }
-  ],
+  "related_applications": [{
+    "platform": "webapp",
+    "url": "https://dragonhead.github.io/monaka/app.webmanifest"
+  }],
+
   "capture_links": "new-client",
   "url_handlers": [
     {

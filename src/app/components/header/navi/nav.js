@@ -1,4 +1,4 @@
-import config from "../../../js/config.json" assert { type: "json" };
+import config from "../../../config.json" assert { type: "json" };
 import styles from "./nav.css" assert { type: "css" };
 
 export default class NavElement extends HTMLElement {

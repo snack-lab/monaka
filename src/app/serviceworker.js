@@ -1,17 +1,19 @@
 // Event(install, activate, message, fetch, sync, push)
 
-import { MAIN_CACHE, OFFLINE_CACHE, APP_SCOPE } from './config.js';
+const MAIN_CACHE = `monacache_0.1.0`;
+const OFFLINE_CACHE = `monacache_offline_0.1.0`;
+const APP_SCOPE = "/monaka/";
 
 const CACHE_LIST = [
   `${APP_SCOPE}`,
   `${APP_SCOPE}index.html`,
   `${APP_SCOPE}about.html`,
   `${APP_SCOPE}404.html`,
-  `${APP_SCOPE}config.js`,
-  `${APP_SCOPE}manifest.webmanifest`,
+  `${APP_SCOPE}config.json`,
+  `${APP_SCOPE}app.webmanifest`,
   `${APP_SCOPE}css/app.css`,
   `${APP_SCOPE}css/base.css`,
-  `${APP_SCOPE}js/app.js`,
+  `${APP_SCOPE}js/index.js`,
   `${APP_SCOPE}js/about.js`,
   `${APP_SCOPE}components/header/header.js`,
   `${APP_SCOPE}components/header/header.css`,

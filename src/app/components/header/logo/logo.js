@@ -1,4 +1,4 @@
-import config from "../../../js/config.json" assert { type: "json" };
+import config from "../../../config.json" assert { type: "json" };
 import styles from "./logo.css" assert { type: "css" };
 export default class LogoElement extends HTMLElement {
   #root;

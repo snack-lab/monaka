@@ -1,0 +1,5 @@
+{
+  "app_scope": "/monaka/",
+  "main_cache": "monacache_0.1.0",
+  "offline_cache": "monacache_offline_0.1.0"
+}

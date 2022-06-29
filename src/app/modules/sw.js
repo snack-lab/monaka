@@ -1,20 +1,8 @@
-import config from './config.json' assert {type: 'json'};
-import HeaderElement from '../components/header/header.js';
-customElements.define('m-header', HeaderElement);
-
-document.addEventListener('readystatechange', (event) => {
-  console.debug(document.readyState);
-});
-
-
-// service worker
-window.addEventListener("beforeinstallprompt", async (e) => {
-  console.debug(e.platforms);
-});
+import config from '../config.json' assert {type: 'json'};
 
 window.addEventListener('DOMContentLoaded', () => {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register(`${config.app_scope}service-worker.js`, { type: 'module', scope: `${config.app_scope}`})
+    navigator.serviceWorker.register(`${config.app_scope}serviceworker.js`, { type: 'module', scope: `${config.app_scope}`})
     .then((registration) => {
       let sw = registration.installing || registration.waiting || registration.active;
       console.debug(`service worker: ${sw.state} `, registration.scope);
