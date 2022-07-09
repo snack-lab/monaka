@@ -1,0 +1,88 @@
+/* https://css-tricks.com/conditionally-styling-selected-elements-in-a-grid-container/
+ */
+
+input {
+  display: grid;
+  width: 40px; height: 40px; margin: 0;
+  appearance: none; -webkit-appearance: none;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 20px;
+}
+
+input:not(:nth-of-type(7n+1))::before,
+input:nth-of-type(n+8)::after {
+  content: '';
+  border-radius: 20px;
+  pointer-events: none;
+  grid-area: 1/1;
+  z-index: -1;
+}
+
+input:not(:nth-of-type(7n+1))::before { transform: translatex(-60px); }
+
+input:nth-of-type(n+8)::after { transform: translatey(-60px); }
+
+input:checked { background: limegreen; }
+
+/* a box's right borders */
+input:not(:nth-of-type(7n)):checked + input:checked::before {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: limegreen;
+}
+/* a box's bottom borders */
+input:nth-last-of-type(n+8):checked + * + * + * + * + * + * + input:checked::after {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: limegreen;
+}
+/* a box's adjacent (rightside) box's left borders */
+input:not(:nth-of-type(7n)):checked + input:checked + input::before {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: limegreen;
+}
+/* a box's adjacent (below) box's top borders */
+input:not(:nth-of-type(7n)):checked + * + * + * + * + * + * +  input:checked + input::before {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: limegreen;
+}
+/* a box's (in last column) left borders */
+input:nth-of-type(7n-1):checked + input:checked {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* a box's (in last column) adjacent (below) box's top borders */
+input:nth-of-type(7n):checked + * + * + * + * + * + * + input:checked {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+main {
+  display: grid;
+  grid-area: 1/1;
+  grid:  repeat(5, 60px) / repeat(7, 60px);
+  align-items: center; justify-items: center;
+  margin: 0;
+}
+
+main:nth-of-type(2){
+  pointer-events: none;
+}
+
+h4 {
+  font-family: courier new;
+  margin:0;
+  margin-bottom: 10px;
+  color:  darkslategray;
+}
+
+body {
+  display: grid;
+  margin-top: 25vh;
+  align-items: center; justify-items: center;
+  user-select: none; -webkit-user-select:  none;
+  -webkit-tap-highlight-color: transparent;
+}
