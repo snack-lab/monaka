@@ -1,16 +1,16 @@
-import config from "../../../js/config.json" assert { type: "json" };
+import appConfig from "../../../../src/app/appConfig.js";
 import styles from "./nav.css" assert { type: "css" };
 
 export default class NavElement extends HTMLElement {
   #root;
   #navilist = [
-    { text: "Home", href: `${location.origin}${config.app_scope}` },
+    { text: "Home", href: `${location.origin}${appConfig.app_scope}` },
     { text: "About", href: "about.html" },
   ];
 
   constructor() {
     super();
-    this.#root = this.attachShadow({ mode: "open" });
+    this.#root = this.attachShadow({ mode: "closed" });
     this.#root.adoptedStyleSheets.push(styles);
     this.#root.appendChild(this.#template());
   }

@@ -1,4 +1,4 @@
-import config from "../../../js/config.json" assert { type: "json" };
+import appConfig from "../../../../src/app/appConfig.js";
 import styles from "./logo.css" assert { type: "css" };
 export default class LogoElement extends HTMLElement {
   #root;
@@ -6,7 +6,7 @@ export default class LogoElement extends HTMLElement {
 
   constructor() {
     super();
-    this.#root = this.attachShadow({ mode: "open" });
+    this.#root = this.attachShadow({ mode: "closed" });
     this.#root.adoptedStyleSheets.push(styles);
     this.#root.appendChild(this.#template());
   }
@@ -17,7 +17,7 @@ export default class LogoElement extends HTMLElement {
     const template = document.createElement("template");
     template.innerHTML = `
       <h1 class="logo">
-        <a href="${location.origin}${config.app_scope}">${this.siteName}</a>
+        <a href="${location.origin}${appConfig.app_scope}">${this.siteName}</a>
       </h1>
     `;
 

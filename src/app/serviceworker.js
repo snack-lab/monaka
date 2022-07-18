@@ -1,40 +1,19 @@
 // Event(install, activate, message, fetch, sync, push)
 
-const MAIN_CACHE = `monacache_0.1.0`;
-const OFFLINE_CACHE = `monacache_offline_0.1.0`;
-const APP_SCOPE = "/monaka/";
-
-const CACHE_LIST = [
-  `${APP_SCOPE}`,
-  `${APP_SCOPE}index.html`,
-  `${APP_SCOPE}about.html`,
-  `${APP_SCOPE}404.html`,
-  `${APP_SCOPE}config.json`,
-  `${APP_SCOPE}app.webmanifest`,
-  `${APP_SCOPE}css/app.css`,
-  `${APP_SCOPE}css/base.css`,
-  `${APP_SCOPE}js/index.js`,
-  `${APP_SCOPE}js/about.js`,
-  `${APP_SCOPE}components/header/header.js`,
-  `${APP_SCOPE}components/header/header.css`,
-  `${APP_SCOPE}components/header/logo/logo.js`,
-  `${APP_SCOPE}components/header/logo/logo.css`,
-  `${APP_SCOPE}components/header/navi/nav.js`,
-  `${APP_SCOPE}components/header/navi/nav.css`,
-];
+import appConfig from "./appConfig.js";
 
 // install
 self.addEventListener('install', event => {
   const preCache = async () => {
     console.debug(`add main cache`);
-    const cache = await caches.open(`${MAIN_CACHE}`);
-    return cache.addAll(CACHE_LIST);
+    const cache = await caches.open(`${appConfig.mainCacheName}`);
+    return cache.addAll(appConfig.mainCacheList);
   }
 
   const offlineCache = async () => {
     console.debug(`add offline cache`);
-    const cache = await caches.open(`${OFFLINE_CACHE}`);
-    return cache.add(`${APP_SCOPE}offline.html`, { cache: "reload"});
+    const cache = await caches.open(`${appConfig.offlineCacheName}`);
+    return cache.add(`${appConfig.appScope}offline.html`, { cache: "reload"});
   }
 
   event.waitUntil(
@@ -53,7 +32,7 @@ self.addEventListener('activate', event => {
   console.debug('activate....');
 
   // 古いキャッシュの削除
-  const cacheKeepList = new Set([`${MAIN_CACHE}`, `${OFFLINE_CACHE}`]);
+  const cacheKeepList = new Set([`${appConfig.mainCacheName}`, `${appConfig.offlineCacheName}`]);
 
   event.waitUntil(
     (async () => {
@@ -102,8 +81,8 @@ self.addEventListener('fetch', event => {
         } catch (error) {
           console.debug("Fetch failed; returning offline page instead.", error);
 
-          const cache = await caches.open(OFFLINE_CACHE);
-          const cachedResponse = await cache.match(`${APP_SCOPE}offline.html`);
+          const cache = await caches.open(offlineCacheName);
+          const cachedResponse = await cache.match(`${appConfig.appScope}offline.html`);
           return cachedResponse;
         }
       })())
@@ -145,7 +124,7 @@ self.addEventListener('fetch', event => {
         }
 
         const responseClone = await networkResponse.clone();
-        const cache = await caches.open(MAIN_CACHE);
+        const cache = await caches.open(appConfig.mainCacheName);
         await cache.put(event.request, responseClone);
 
         console.debug(`fetch network response: `, event.request)
@@ -166,7 +145,7 @@ self.addEventListener('backgroundfetchsuccess', event => {
   event.waitUntil((async () => {
     try {
       const id = event.registration.id
-      const cache = await caches.open(MAIN_CACHE)
+      const cache = await caches.open(appConfig.mainCacheName)
       const records = await event.registration.matchAll();
       console.debug(id, records);
 
@@ -192,7 +171,7 @@ self.addEventListener('backgroundfetchfail', event => {
   event.waitUntil((async () => {
     try {
       const id = event.registration.id
-      const cache = await caches.open(MAIN_CACHE);
+      const cache = await caches.open(appConfig.mainCacheName);
       const records = await event.registration.matchAll();
       console.debug(id, records);
 

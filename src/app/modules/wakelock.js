@@ -1,29 +1,37 @@
 let wakeLock = null;
 let isSupported = null;
 
-if ("wakeLock" in navigator) {
+if ("wakeLock" in navigator && self.isSecureContext) {
   isSupported = true;
 } else {
   isSupported = false;
 }
 
-
-export const requestWakeLock = async () => {
+/**
+ * 起動ロック
+ */
+export async function requestWakeLock() {
   if (isSupported) {
     try {
       wakeLock = await navigator.wakeLock.request("screen");
       console.debug(`Locked`);
 
-      wakeLock.addEventListener("release", () => {
+      wakeLock.onrelease = () => {
         console.debug("Released");
-      });
+      }
     } catch (err) {
       console.debug(`${err.name} ${err.message}`);
     }
   }
 }
 
-export const releaseWakeLock = () => {
+/**
+ * 起動ロック開放
+ */
+export function releaseWakeLock() {
+  console.debug("wakeLock", wakeLock);
+  console.debug("isSupported", isSupported);
+
   if (wakeLock !== null && isSupported) {
     wakeLock.release().then(() => {
       wakeLock = null;
@@ -31,11 +39,11 @@ export const releaseWakeLock = () => {
   }
 }
 
-export const handleVisibilityChange = () => {
+/**
+ * 起動ロック再取得
+ */
+export function handleVisibilityChange() {
   if (wakeLock !== null && document.visibilityState === "visible") {
     requestWakeLock();
   }
 }
-
-document.addEventListener('visibilitychange', handleVisibilityChange);
-document.addEventListener('DOMContentLoaded', requestWakeLock);
