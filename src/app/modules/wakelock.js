@@ -20,7 +20,7 @@ export async function requestWakeLock() {
         console.debug("Released");
       }
     } catch (err) {
-      console.debug(`${err.name} ${err.message}`);
+      console.error(`${err.name} ${err.message}`);
     }
   }
 }

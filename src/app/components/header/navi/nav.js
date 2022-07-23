@@ -1,11 +1,14 @@
 import appConfig from "../../../appConfig.js";
 import styles from "./nav.css" assert { type: "css" };
+import InstallButtonElement from "../../button/install/install.js";
+
+customElements.define('m-install', InstallButtonElement);
 
 export default class NavElement extends HTMLElement {
   #root;
   #navilist = [
     { text: "Home", href: `${location.origin}${appConfig.appScope}` },
-    { text: "About", href: "about.html" },
+    { text: "About", href: `${location.origin}${appConfig.appScope}pages/about.html` },
   ];
 
   constructor() {
@@ -30,6 +33,7 @@ export default class NavElement extends HTMLElement {
       `
         )
         .join("")}
+        <m-install></m-install>
       </ul>
     </nav>
     </div>

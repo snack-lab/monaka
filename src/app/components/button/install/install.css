@@ -3,3 +3,11 @@
     display: none;
   }
 }
+
+#iBtn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 1rem;
+}

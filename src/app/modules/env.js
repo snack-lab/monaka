@@ -60,13 +60,10 @@ const uad = async () => {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  let u = null;
   if (navigator.userAgentData) {
-    u = await uad();
-    console.log(u);
+    console.debug(await uad());
   } else {
-    u = await ua();
-    console.log(u);
+    console.debug(await ua());
   }
 });
 
