@@ -20,7 +20,7 @@ const userAgentDataBrowserCheck = (targetBrand, brands) => {
   return _browser;
 }
 
-const ua = () => {
+const _ua = () => {
   const uaPlatforms = [
     { key: "windows nt 6.3", value: "Windows 8.1" },
     { key: "windows nt 10", value:  "Windows 10" },
@@ -49,7 +49,7 @@ const ua = () => {
   return { os: os, browser: browser }
 }
 
-const uad = async () => {
+const _uad = async () => {
   const uadBrands = ["Google Chrome", "Microsoft Edge"];
   const uaData = navigator.userAgentData;
   const highEntropyValues = await uaData.getHighEntropyValues(["brands","platform"]);
@@ -59,12 +59,14 @@ const uad = async () => {
   return { os: os, browser: browser }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+const ua = async () => {
   if (navigator.userAgentData) {
-    console.debug(await uad());
+    return await _uad();
   } else {
-    console.debug(await ua());
+    return await _ua();
   }
-});
+}
+
+export default ua;
 
 
