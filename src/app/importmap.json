@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "modules.sw.js": "./modules/sw.js",
+    "modules.navigation.js": "./modules/navigation.js",
+    "modules.env.js": "./modules/env.js"
+  }
+}

@@ -8,7 +8,7 @@ export default class NavElement extends HTMLElement {
   #root;
   #navilist = [
     { text: "Home", href: `${location.origin}${appConfig.appScope}` },
-    { text: "About", href: `${location.origin}${appConfig.appScope}pages/about.html` },
+    { text: "About", href: `${location.origin}${appConfig.appScope}about.html` },
   ];
 
   constructor() {

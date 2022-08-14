@@ -1,6 +1,12 @@
-import "./modules/sw.js";
-import "./modules/navigation.js";
-import "./modules/env.js";
+// if (HTMLScriptElement.supports && HTMLScriptElement.supports('importmap')) {
+//   await import("modules.sw.js");
+//   await import("modules.navigation.js");
+//   await import("modules.env.js");
+// } else {
+  await import("./modules/sw.js");
+  await import("./modules/navigation.js");
+  await import("./modules/env.js");
+// }
 
 import { requestWakeLock, releaseWakeLock, handleVisibilityChange } from "./modules/wakelock.js";
 window.addEventListener("DOMContentLoaded", requestWakeLock);
