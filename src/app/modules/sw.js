@@ -30,20 +30,20 @@ if ("serviceWorker" in navigator && self.isSecureContext) {
               // await Promise.all(tags.map((tag) => registration.periodicSync.unregister(tag)))
             }
           }
+
+          registration.addEventListener('updatefound', () => {
+            const installWorker = registration.installing;
+            console.debug(`new service worker installing...`, installWorker);
+
+            installWorker.addEventListener('statechange', event => {
+              if (event.target.state === "installed") {
+                alert("アップデート通知:新しいバージョンがリリスされました。アップデートを実施します。");
+                location. href = `${location.origin}/monaka/index.html`
+              }
+            })
+          })
         }
       }
-
-      registration.addEventListener('updatefound', () => {
-        const installWorker = registration.installing;
-        console.debug(`new service worker installing...`, installWorker);
-
-        installWorker.addEventListener('statechange', event => {
-          if (event.target.state === "installed") {
-            alert("アップデート通知:新しいバージョンがリリスされました。アップデートを実施します。");
-            location. href = `${location.origin}/monaka/index.html`
-          }
-        })
-      })
 
       // registration.unregister().then((bool) => {
       //   if (bool) {
