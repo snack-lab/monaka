@@ -11,7 +11,6 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.wordWrapColumn": 120,
   "editor.formatOnSave": true,
-  "editor.experimental.stickyScroll.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
@@ -46,5 +45,6 @@
   "hadolintPath": "hadolint",
   "cliOptions": ["--no-color", "--ignore", "DL3000"],
   "maxNumberOfProblems": 100,
-  "outputLevel": "warning"
+  "outputLevel": "warning",
+  "editor.stickyScroll.enabled": true
 }
