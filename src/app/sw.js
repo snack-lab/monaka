@@ -3,10 +3,9 @@ import * as swLib from "./swlib.js";
 
 self.addEventListener('install', event => {
   console.debug(event.type, event);
-
-  event.waitUntil(Promise.all([swLib.addResources(), swLib.addOfflineResources()]));
   // 待機しているService Workerがアクティブになるように強制
-  // event.waitUntil(Promise.all([swLib.addResources(), swLib.addOfflineResources(),self.skipWaiting()]));
+  event.waitUntil(Promise.all([swLib.addResources(), swLib.addOfflineResources(),self.skipWaiting()]));
+  // event.waitUntil(Promise.all([swLib.addResources(), swLib.addOfflineResources()]));
 });
 
 self.addEventListener('activate', event => {
@@ -15,7 +14,8 @@ self.addEventListener('activate', event => {
   event.waitUntil(Promise.all([
     swLib.deleteOldCaches(`${appConfig.mainCacheName}`, `${appConfig.mainCacheList}`),
     swLib.deleteOldCaches(`${appConfig.offlineCacheName}`, `${appConfig.offlineCacheList}`),
-    swLib.enableNavigationPreload()
+    swLib.enableNavigationPreload(),
+    self.clients.claim()
    ]));
 
   // アクティブなサービスワーカーが自身のスコープ内のすべてのクライアントのコントローラーとして自分自身を設定できる。
@@ -115,6 +115,9 @@ self.addEventListener('periodicsync', (event) => {
   console.debug(event.type, event);
 
   if (event.tag == `${appConfig.periodicSync.tags.resources.name}`) {
-    event.waitUntil(Promise.all([swLib.addResources(), swLib.addOfflineResources()]));
+    event.waitUntil(Promise.all([
+      swLib.deleteOldCaches(`${appConfig.mainCacheName}`, appConfig.mainCacheList),
+      swLib.addResources(), swLib.addOfflineResources()
+    ]));
   }
 });

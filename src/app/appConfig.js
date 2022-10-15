@@ -1,5 +1,6 @@
 const appConfig = {
   appScope: '/monaka/',
+  appVersion: "0.0.1",
   mainCacheName: 'monacahe_v0.1.0',
   offlineCacheName: 'monacache_offline_v0.1.0',
   mediaCacheName: 'monacache_media_v1.0.0',
