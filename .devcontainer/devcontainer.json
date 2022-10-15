@@ -59,7 +59,11 @@
   "extensions": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "pranaygp.vscode-css-peek",
+    "vunguyentuan.vscode-css-variables",
+    "mikestead.dotenv",
+    "jock.svg"
   ],
   "shutdownAction": "stopCompose"
 }
