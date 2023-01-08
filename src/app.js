@@ -8,10 +8,10 @@ const httpPort = 3000;
 const httpsPort = 3001;
 const router = express.Router();
 
-const options = {
-  key: fs.readFileSync("./privatekey.pem"),
-  cart: fs.readFileSync("./cert.pem")
-}
+// const options = {
+//   key: fs.readFileSync("./privatekey.pem"),
+//   cart: fs.readFileSync("./cert.pem")
+// }
 
 router.use((req, res, next) => {
   res.set('Cache-control', 'no-store');
