@@ -6,7 +6,7 @@
   "editor.fontLigatures": true,
   "editor.renderLineHighlight": "all",
   "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "block",
   "editor.bracketPairColorization.enabled": true,
   "editor.wordWrapColumn": 120,
