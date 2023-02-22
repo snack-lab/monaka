@@ -1,4 +1,4 @@
-FROM node:19.6.1-bullseye-slim
+FROM node:19.7.0-bullseye-slim
 
 RUN apt-get update \
  && apt-get install -y wget
