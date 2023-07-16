@@ -1,7 +1,0 @@
-.some-class {
-  margin-block-end: env(keyboard-inset-height, 50px);
-}
-
-.some-other-class {
-  margin-block-end: env(keyboard-inset-height);
-}

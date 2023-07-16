@@ -8,6 +8,8 @@
 
 [eslint](https://eslint.org/)
 
+[clean-css](https://github.com/clean-css/clean-css-cli)
+
 ## vscode
 
 [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
