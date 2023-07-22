@@ -27,9 +27,9 @@
     "eslint-plugin-prettier": "^5.0.0",
     "express": "^4.18.2",
     "minify": "^10.3.0",
-    "npm-check-updates": "^16.10.15",
+    "npm-check-updates": "^16.10.16",
     "prettier": "^3.0.0",
-    "stylelint": "^15.10.1",
+    "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-prettier": "^4.0.0"

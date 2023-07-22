@@ -1,3 +1,8 @@
+.devcontainer/
+.github/
+.vscode/
+bk/
+docker/
 .dockerignore
 node_modules
 npm-debug.log

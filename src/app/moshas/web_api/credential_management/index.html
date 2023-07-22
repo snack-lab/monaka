@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Password Credential</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./index.js" defer></script>
+</head>
+<body>
+  <form action="./xxx.html" method="post">
+    <section>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="" autocomplete="email" required>
+    </section>
+
+    <section>
+        <label for="current-password">Password</label>
+        <input type="password" id="current-password" name="current-password" autocomplete="current-password" aria-describedby="password-constraints" required>
+    </section>
+
+    <button type="submit" id="signin">Sign in</button>
+  </form>
+</body>
+</html>
