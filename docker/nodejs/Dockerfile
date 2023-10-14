@@ -1,4 +1,4 @@
-FROM node:18.18.0-bullseye-slim
+FROM node:18.18.1-bullseye-slim
 
 RUN apt-get update \
  && apt-get install -y wget
