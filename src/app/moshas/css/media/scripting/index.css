@@ -1,0 +1,24 @@
+/* スクリプトが利用できない状態で有効  */
+@media(scripting: none) {
+  body {
+    background: red;
+    color: white;
+  }
+
+  .enabled {
+    display: none;
+  }
+}
+/* スクリプトが利用できる状態のページロード時に有効 */
+/* ページロード完了のタイミングはloadイベント発生のタイミングとなる */
+@media(scripting: initial-only) {
+ body {
+  background: #c3c3c3;
+ }
+}
+/* スクリプトが利用できる状態で有効 */
+@media(scripting: enabled) {
+ body {
+  background: #fff;
+ }
+}
