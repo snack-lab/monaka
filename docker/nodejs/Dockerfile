@@ -1,4 +1,4 @@
-FROM node:18.18.1-bullseye-slim
+FROM node:18.18.2-bullseye-slim
 
 RUN apt-get update \
  && apt-get install -y wget
@@ -12,4 +12,3 @@ RUN chown -R monakadev:monakadev $HOME/*
 USER monakadev
 WORKDIR $HOME/monaka/src
 RUN npm install
-
