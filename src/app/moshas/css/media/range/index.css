@@ -1,0 +1,17 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+}
+
+@media (400px <= width <= 600px) {
+  body {
+    background-color: #00ffff;
+  }
+}
+
+@media (width < 400px ) {
+  body {
+    background-color: #ff0000;
+  }
+}

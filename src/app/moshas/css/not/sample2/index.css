@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-content: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  padding: 16px;
+}
+
+li:not(:last-of-type) {
+  border-bottom: 4px dotted tomato;;
+}

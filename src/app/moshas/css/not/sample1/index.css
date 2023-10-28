@@ -1,0 +1,20 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 15rem);
+    grid-gap: 3rem;
+    pointer-events: none;
+    max-width: 60rem;
+    list-style: none;
+}
+
+.grid:hover .grid__child:not(:hover) {
+    opacity: 0.3;
+}
+
+.grid__child {
+    background: rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    aspect-ratio: 1/1;
+    pointer-events: auto;
+    transition: opacity 300ms;
+}
