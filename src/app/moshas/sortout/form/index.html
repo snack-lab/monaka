@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <label>text</label>
+      <input type="text" name="text1" enterkeyhint="next" inputmode="text" />
+    </div>
+    <div>
+      <label>decimal</label>
+      <input type="text" name="text2" enterkeyhint="next" inputmode="decimal" />
+    </div>
+    <div>
+      <label>numeric</label>
+      <input type="text" name="text3" enterkeyhint="next" inputmode="numeric" />
+    </div>
+    <div>
+      <label>tel</label>
+      <input type="tel" name="text4" enterkeyhint="next" inputmode="tel" />
+    </div>
+    <div>
+      <label>email</label>
+      <input type="email" name="text5" enterkeyhint="next" inputmode="email" />
+    </div>
+    <div>
+      <label>url</label>
+      <input type="url" name="text6" enterkeyhint="next" inputmode="url" />
+    </div>
+    <div>
+      <label>text</label>
+      <input type="text" name="text7" enterkeyhint="previous" />
+    </div>
+    <div>
+      <label>textarea</label>
+      <textarea name="textarea" enterkeyhint="enter"></textarea>
+    </div>
+    <div>
+      <label>search</label>
+      <input type="search" name="search" enterkeyhint="search" inputmode="search" />
+      <button enterkeyhint="search">search</button>
+    </div>
+    <div>
+      <label>text</label>
+      <input type="text" name="text8" enterkeyhint="go" />
+      <button enterkeyhint="go">go</button>
+    </div>
+    <div>
+      <label>text</label>
+      <input type="text" name="text9" enterkeyhint="done" />
+      <button enterkeyhint="done">done</button>
+    </div>
+    <div>
+      <label>text</label>
+      <input type="text" name="text10" enterkeyhint="send" />
+      <button enterkeyhint="send">send</button>
+    </div>
+
+    <div>
+      <button class="show_picker">show</button>
+      <input type="date" />
+    </div>
+
+    <div>
+      <button class="show_picker">show</button>
+      <input type="datetime-local" />
+    </div>
+
+    <div>
+      <button class="show_picker">show</button>
+      <input type="month" />
+    </div>
+
+    <div>
+      <button class="show_picker">show</button>
+      <input type="week" />
+    </div>
+
+    <div>
+      <button class="show_picker">show</button>
+      <input type="time" />
+    </div>
+
+    <div>
+      <button class="show_picker">show</button>
+      <input type="color" />
+    </div>
+
+    <div>
+      <button class="show_picker">show</button>
+      <input type="file" />
+    </div>
+
+    <div>
+      <datalist id="exlist">
+        <option value="example1"></option>
+        <option value="example2"></option>
+        <option value="example3"></option>
+      </datalist>
+      <button class="show_picker">show</button>
+      <input type="text" list="exlist" />
+    </div>
+
+    <div>
+      <label>Name</label>
+      <button class="show_picker">show</button>
+      <input type="text" autocomplete="name" />
+    </div>
+
+    <div>
+      <label>New Password</label>
+      <button class="show_picker">show</button>
+      <input type="password" autocomplete="new-password" />
+    </div>
+  </body>
+</html>
