@@ -12,4 +12,3 @@ RUN chown -R monakadev:monakadev $HOME/*
 USER monakadev
 WORKDIR $HOME/monaka/src
 RUN npm install
-
