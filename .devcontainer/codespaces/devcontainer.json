@@ -3,7 +3,8 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
   // "build": { "dockerfile": "../../docker/nodejs/Dockerfile.dev" },
   // "remoteUser": "monakadev",
-  // "workspaceFolder": "/home/monakadev/monaka",
+  "workspaceFolder": "/workspaces/monaka/src",
+  // "runArgs": ["--env-file", ".env"],
   "customizations": {
     "vscode": {
       "settings": {
@@ -54,7 +55,8 @@
         "ms-ceintl.vscode-language-pack-ja",
         "yzhang.markdown-all-in-one",
         "firefox-devtools.vscode-firefox-debug",
-        "ms-edgedevtools.vscode-edge-devtools"
+        "ms-edgedevtools.vscode-edge-devtools",
+        "vscode-icons-team.vscode-icons"
       ]
     }
   },
@@ -64,10 +66,10 @@
       "onAutoForward": "notify"
     }
   },
+  "postCreateCommand": "npm install",
   "features": {
     "ghcr.io/devcontainers-contrib/features/gh-cli:1": {},
     "ghcr.io/devcontainers-contrib/features/jshint:2": {},
     "ghcr.io/devcontainers-contrib/features/node-asdf:0": {}
-  },
-  "runArgs": ["--env-file", ".env"]
+  }
 }
