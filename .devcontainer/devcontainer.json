@@ -1,9 +1,0 @@
-{
-	"name": "monaka",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/gh-cli:1": {},
-		"ghcr.io/devcontainers-contrib/features/jshint:2": {},
-		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {}
-	}
-}

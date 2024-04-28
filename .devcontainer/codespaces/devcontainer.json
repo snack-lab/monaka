@@ -1,0 +1,73 @@
+{
+  "name": "monaka",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  // "build": { "dockerfile": "../../docker/nodejs/Dockerfile.dev" },
+  // "remoteUser": "monakadev",
+  // "workspaceFolder": "/home/monakadev/monaka",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "breadcrumbs.enabled": true,
+        "editor.minimap.enabled": false,
+        "editor.cursorBlinking": "smooth",
+        "editor.cursorSmoothCaretAnimation": "on",
+        "editor.fontLigatures": true,
+        "editor.fontSize": 11,
+        "editor.tabSize": 2,
+        "editor.renderLineHighlight": "all",
+        "editor.renderWhitespace": "all",
+        "editor.renderControlCharacters": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.stickyScroll.enabled": true,
+        "editor.suggestSelection": "first",
+        "editor.wordWrapColumn": 120,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        "files.autoGuessEncoding": true,
+        "window.zoomLevel": -1,
+        "workbench.iconTheme": "vscode-icons",
+        "workbench.colorTheme": "Default Dark Modern",
+        "workbench.startupEditor": "newUntitledFile",
+        "workbench.editor.enablePreview": false,
+        "notebook.codeActionsOnSave": {
+          "source.organizeImports": "explicit",
+          "source.fixAll.eslint": "explicit",
+          "source.fixAll.stylelint": "explicit"
+        }
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "stylelint.vscode-stylelint",
+        "pranaygp.vscode-css-peek",
+        "vunguyentuan.vscode-css-variables",
+        "mikestead.dotenv",
+        "aaron-bond.better-comments",
+        "streetsidesoftware.code-spell-checker",
+        "saikou9901.evilinspector",
+        "christian-kohler.path-intellisense",
+        "mechatroner.rainbow-csv",
+        "ms-ceintl.vscode-language-pack-ja",
+        "yzhang.markdown-all-in-one",
+        "firefox-devtools.vscode-firefox-debug",
+        "ms-edgedevtools.vscode-edge-devtools"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Monaka Remote",
+      "onAutoForward": "notify"
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/gh-cli:1": {},
+    "ghcr.io/devcontainers-contrib/features/jshint:2": {},
+    "ghcr.io/devcontainers-contrib/features/node-asdf:0": {}
+  },
+  "runArgs": ["--env-file", ".env"]
+}
