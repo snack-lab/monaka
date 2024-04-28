@@ -29,6 +29,13 @@
         "files.trimFinalNewlines": true,
         "files.trimTrailingWhitespace": true,
         "files.autoGuessEncoding": true,
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash",
+            "args": []
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "bash",
         "window.zoomLevel": -1,
         "workbench.iconTheme": "vscode-icons",
         "workbench.colorTheme": "Default Dark Modern",
