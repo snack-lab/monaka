@@ -1,0 +1,7 @@
+.devcontainer/
+.github/
+.vscode/
+docker/
+.git
+.gitignore
+.npmrc
