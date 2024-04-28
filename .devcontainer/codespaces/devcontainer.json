@@ -70,7 +70,7 @@
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "cd ./src && npm install",
   "features": {
     "ghcr.io/devcontainers-contrib/features/gh-cli:1": {},
     "ghcr.io/devcontainers-contrib/features/jshint:2": {},
