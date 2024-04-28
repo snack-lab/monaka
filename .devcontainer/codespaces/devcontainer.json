@@ -5,6 +5,7 @@
   // "remoteUser": "monakadev",
   "workspaceFolder": "/workspaces/monaka/src",
   // "runArgs": ["--env-file", ".env"],
+  "shutdownAction": "stopContainer",
   "customizations": {
     "vscode": {
       "settings": {
