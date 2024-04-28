@@ -3,9 +3,12 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
   // "build": { "dockerfile": "../../docker/nodejs/Dockerfile.dev" },
   // "remoteUser": "monakadev",
-  "workspaceFolder": "/workspaces/monaka/src",
+  "workspaceFolder": "/workspaces/monaka",
   // "runArgs": ["--env-file", ".env"],
   "shutdownAction": "stopContainer",
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  },
   "customizations": {
     "vscode": {
       "settings": {
