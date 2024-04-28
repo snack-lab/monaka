@@ -6,7 +6,7 @@ services:
     user: monakadev
     # command: "npm start"
     environment:
-      NODE_ENV: development
+      NODE_ENV: ${NODE_ENV}
     ports:
       - "8888:3000"
     volumes:
