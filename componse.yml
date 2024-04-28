@@ -1,0 +1,28 @@
+services:
+  monaka:
+    build:
+      context: .
+      dockerfile: ./docker/nodejs/Dockerfile
+    user: monakadev
+    # command: "npm start"
+    environment:
+      NODE_ENV: development
+    ports:
+      - "8888:3000"
+    volumes:
+      - monaka-src-store:/home/monakadev/monaka/src
+      - monaka-docs-store:/home/monakadev/monaka/docs
+      - /home/monakadev/monaka/src/node_modules
+volumes:
+  monaka-src-store:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./src
+      o: bind
+  monaka-docs-store:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./docs
+      o: bind
