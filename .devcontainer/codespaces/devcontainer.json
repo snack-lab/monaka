@@ -1,10 +1,9 @@
 {
   "name": "monaka",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-  // "build": { "dockerfile": "../../docker/nodejs/Dockerfile.dev" },
-  // "remoteUser": "monakadev",
+  "build": {
+    "dockerfile": "../../docker/nodejs/Dockerfile.dev"
+  },
   "workspaceFolder": "/workspaces/monaka",
-  // "runArgs": ["--env-file", ".env"],
   "shutdownAction": "stopContainer",
   "remoteEnv": {
     "NODE_ENV": "development"
@@ -77,7 +76,12 @@
       "onAutoForward": "notify"
     }
   },
+  "initializeCommand": "echo 'Initializing'",
+  "onCreateCommand": "echo 'onCreate'",
+  "updateContentCommand": "echo 'updateContent'",
   "postCreateCommand": "cd ./src && npm install",
+  "postStartCommand": "echo 'postStart'",
+  "postAttachCommand": "echo 'postAttach'",
   "features": {
     "ghcr.io/devcontainers-contrib/features/gh-cli:1": {},
     "ghcr.io/devcontainers-contrib/features/jshint:2": {},
