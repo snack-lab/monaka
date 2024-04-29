@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "description": "Github page / monaka",
   "private": true,
+  "author": "",
+  "license": "ISC",
   "type": "module",
   "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "inspect": "eslint --inspect-config",
+    "build": "node copy.js"
+  },
   "devDependencies": {
     "@eslint/config-inspector": "^0.4.7",
     "eslint": "^9.1.1",
@@ -17,12 +25,5 @@
     "stylelint-config-standard": "^36.0.0",
     "stylelint-order": "^6.0.4",
     "stylelint-prettier": "^5.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "inspect": "eslint --inspect-config"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
