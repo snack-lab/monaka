@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "inspect": "eslint --inspect-config",
-    "build": "node copy.js"
+    "build": "node --env-file .env copy.js"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^0.4.7",
