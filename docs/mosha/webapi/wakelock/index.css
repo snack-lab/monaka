@@ -1,0 +1,16 @@
+body {
+  background: #ff0000;
+}
+
+.control {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 250px;
+  text-align: right;
+}
+
+#lock {
+  width: 75px;
+  height: 25px;
+}
