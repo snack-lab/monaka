@@ -2,10 +2,15 @@ import fs from "node:fs";
 import { readdir, unlink, rm, copyFile,mkdir } from "node:fs/promises";
 import path from "node:path";
 
-const wsDirNm = "monaka";
+const appName = process.env.APP_NAME;
+if (!appName) {
+  console.error("Error: unknown name");
+  process.exit(1);
+}
+
 const ws = path.resolve(`${import.meta.dirname}`, "../");
-if (path.basename(ws) !== wsDirNm) {
-  console.error("error: directory: %s", path.basename(ws));
+if (path.basename(ws) !== appName) {
+  console.error("Error: directory: %s", path.basename(ws));
   process.exit(1);
 }
 
