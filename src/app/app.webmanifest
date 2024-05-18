@@ -60,7 +60,7 @@
       "icons": [
         {
           "src": "images/icons/icons-192.png",
-          "sizes": "96x96",
+          "sizes": "192x192",
           "type": "image/png"
         }
       ]
