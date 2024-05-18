@@ -46,7 +46,7 @@
     {
       "src": "images/screenshots/screenshots.png",
       "sizes": "500x320",
-      "type": "image/gpng",
+      "type": "image/png",
       "platform": "android",
       "label": "Monaka Github Page"
     }
