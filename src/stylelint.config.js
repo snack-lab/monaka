@@ -1,9 +1,8 @@
-{
+export default {
   "plugins": ["stylelint-order"],
-  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  "extends": ["stylelint-prettier/recommended", "stylelint-config-standard"],
   "rules": {
     "prettier/prettier": true,
     "order/properties-alphabetical-order": true,
-    "indentation": 2
   }
 }
