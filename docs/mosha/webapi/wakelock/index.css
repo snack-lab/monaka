@@ -1,16 +1,16 @@
 body {
-  background: #ff0000;
+  background: #f00;
 }
 
 .control {
-  position: fixed;
   bottom: 1rem;
+  position: fixed;
   right: 1rem;
-  width: 250px;
   text-align: right;
+  width: 250px;
 }
 
 #lock {
-  width: 75px;
   height: 25px;
+  width: 75px;
 }
