@@ -16,4 +16,4 @@ USER monakadev
 WORKDIR $HOME/monaka/src
 RUN npm install
 
-CMD ["dumb-init", "node", "app.js"]
+CMD ["dumb-init", "node", "--watch", "app.js"]
