@@ -24,7 +24,7 @@
     "npm-check-updates": "^16.14.20",
     "prettier": "^3.2.5",
     "secretlint": "^8.2.4",
-    "stylelint": "^16.5.0",
+    "stylelint": "^16.6.0",
     "stylelint-config-standard": "^36.0.0",
     "stylelint-order": "^6.0.4",
     "stylelint-prettier": "^5.0.0"
