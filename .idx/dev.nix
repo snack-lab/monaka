@@ -1,3 +1,4 @@
+# https://developers.google.com/idx/guides/customize-idx-env?hl=ja
 { pkgs, ... }: {
 
   channel = "stable-23.11"; # or "unstable"
