@@ -8,7 +8,7 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node --watch app.js",
     "inspect": "eslint --inspect-config",
     "build": "node --env-file .env copy.js",
     "secretlint": "secretlint '**/*'"
