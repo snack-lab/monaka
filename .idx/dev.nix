@@ -31,7 +31,7 @@
   ];
 
   idx.workspace.onCreate = {
-    npm-install = "npm install";
+    npm-install = "cd src && npm install";
   };
 
   # Enable previews and customize configuration
