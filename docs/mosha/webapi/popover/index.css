@@ -1,0 +1,21 @@
+.sample {
+    margin: 1rem;
+}
+
+#popover1:popover-open {
+    width: 200px;
+    height: 200px;
+    display: grid;
+    place-content: center;
+}
+
+#popover2::backdrop {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+div[popovertarget="popover3"] {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: fit-content;
+    cursor: pointer;
+}

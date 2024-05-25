@@ -62,7 +62,8 @@
         "ms-ceintl.vscode-language-pack-ja",
         "yzhang.markdown-all-in-one",
         "firefox-devtools.vscode-firefox-debug",
-        "ms-edgedevtools.vscode-edge-devtools"
+        "ms-edgedevtools.vscode-edge-devtools",
+        "ms-playwright.playwright"
       ]
     }
   }

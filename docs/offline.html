@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>offline | monaka</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="monaka offline">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://snack-lab.github.io/monaka/">
+<script type="module">
+const home = `${location.origin}/monaka/`;
+const checkOnline = async () => {
+  try {
+  const response = await fetch(home);
+    if (response.status >= 200 && response.status < 500) {
+      window.location.replace(home);
+      return;
+    }
+  } catch {}
+  window.setTimeout(checkOnline, 2500);
+}
+await checkOnline();
+window.addEventListener('online', () => window.location.replace(home));
+</script>
+</head>
+<body>
+  <h1>offline</h1>
+</body>
+</html>

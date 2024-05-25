@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popover</title>
+<link rel="stylesheet" href="./index.css">
+<script type="module" src="./index.js"></script>
+</head>
+<body>
+
+<!-- popover1 -->
+<div class="sample">
+  <button type="button" popovertarget="popover1">ポップアップ1表示</button>
+  <div id="popover1" popover>ポップオーバー1</div>
+</div>
+
+<!-- popover2 -->
+<div class="sample">
+  <button type="button" popovertarget="popover2" popovertargetaction="show">ポップアップ2表示</button>
+  <button type="button" popovertarget="popover2" popovertargetaction="hide">クローズ</button>
+  <div id="popover2" popover>ポップオーバー2</div>
+</div>
+
+<!-- popover3 -->
+<div class="sample">
+  <div id="po3" popovertarget="popover3">ポップアップ3表示</div>
+  <div id="popover3" popover>ポップオーバー3</div>
+</div>
+
+<!-- popover4,5 -->
+<div class="sample">
+  <button type="button" id="po4" popovertarget="popover4" popovertargetaction="show">ポップアップ4表示</div>
+  <div id="popover4" popover>
+    ポップオーバー4
+    <div id="popover5" popover>ポップ5</div>
+  </div>
+</div>
+
+<!-- popover6,7 -->
+<div class="sample">
+  <button type="button" id="po6" popovertarget="popover6">ポップアップ6表示</button>
+  <div id="popover6" popover>
+    <button type="button" id="po7" popovertarget="popover7">ポップ7表示</button>
+    ポップオーバー4
+  </div>
+  <div id="popover7" popover>ポップ7</div>
+</div>
+
+<!-- popover8,9 -->
+<div class="sample">
+  <button type="button" id="po8" popovertarget="popover8">ポップアップ8表示</button>
+  <div id="popover8" popover>ポップオーバー8</div>
+  <div id="popover9" popover anchor="popover8">ポップ9</div>
+</div>
+
+<!-- popover10 -->
+<div class="sample">
+  <button type="button" id="po10" popovertarget="popover10">ポップアップ10表示</button>
+  <div id="popover10" popover>ポップオーバー10</div>
+</div>
+
+<!-- popover11 -->
+<div class="sample">
+  <div id="popover11" popover>ポップオーバー11</div>
+</div>
+
+</body>
+</html>
