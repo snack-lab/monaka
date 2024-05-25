@@ -1,0 +1,12 @@
+dialog {
+  transition: display 1s allow-discrete, overlay 1s allow-discrete, opacity 1s;
+  opacity: 0;
+
+  &[open] {
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}
