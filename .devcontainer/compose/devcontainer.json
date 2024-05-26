@@ -63,7 +63,8 @@
         "yzhang.markdown-all-in-one",
         "firefox-devtools.vscode-firefox-debug",
         "ms-edgedevtools.vscode-edge-devtools",
-        "ms-playwright.playwright"
+        "ms-playwright.playwright",
+        "bierner.markdown-preview-github-styles"
       ]
     }
   }
