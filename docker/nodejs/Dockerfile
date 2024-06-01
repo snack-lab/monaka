@@ -1,4 +1,4 @@
-FROM node:20.13.1-bullseye-slim as base
+FROM node:20.14.0-bullseye-slim as base
 
 RUN apt-get update \
   && apt-get upgrade -y \
