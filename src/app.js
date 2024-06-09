@@ -13,9 +13,9 @@ const app = express();
 const httpPort = 3000;
 const router = express.Router();
 
-router.use(speedLimiter);
-router.use(limiter);
-router.use(csrf);
+// router.use(speedLimiter);
+// router.use(limiter);
+// router.use(csrf);
 // router.use(session);
 router.use(responseHeader);
 
