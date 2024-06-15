@@ -15,8 +15,8 @@ const router = express.Router();
 
 // router.use(speedLimiter);
 // router.use(limiter);
-// router.use(csrf);
 // router.use(session);
+router.use(csrf);
 router.use(responseHeader);
 
 app.use(`/monaka`, router, express.static(`app`));
