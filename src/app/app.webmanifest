@@ -4,8 +4,6 @@
   "start_url": "/monaka/",
   "name": "monaka",
   "short_name": "monaka",
-  "lang": "ja-JP",
-  "dir": "ltr",
   "theme_color": "#1a6ccc",
   "background_color": "#fff",
   "description": "monaka github page",
@@ -37,7 +35,7 @@
     }
   ],
   "display_override": ["window-controls-overlay", "fullscreen", "standalone", "minimal-ui"],
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait-primary",
   "launch_handler": {
     "client_mode": "navigate-existing"

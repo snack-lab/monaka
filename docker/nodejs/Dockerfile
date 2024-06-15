@@ -1,34 +1,35 @@
-FROM node:20.14.0-bullseye-slim as base
+ARG NODE_VERSION=20.14.0
+FROM node:${NODE_VERSION}-bullseye-slim as build
 
-RUN apt-get update \
-  && apt-get upgrade -y \
-  && apt-get install -y --no-install-recommends dumb-init
+LABEL monaka.version="1.0.0"
 
-RUN npm i -g npm
+ENV USER_NAME=monakadev
+ENV USER_GROUP=monakadev
 
-RUN useradd --user-group --create-home --shell /bin/bash monakadev
-ENV HOME=/home/monakadev
+RUN apt update \
+  && apt upgrade -y \
+  && apt install -y --no-install-recommends \
+     dumb-init \
+     locales \
+  && apt clean \
+  && rm -rf /var/lib/apt/lists/* \
+  && npm i -g npm
 
-COPY ./src $HOME/monaka/src
-RUN chown -R monakadev:monakadev $HOME/*
+RUN localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP:ja
+ENV LC_ALL ja_JP.UTF-8
+ENV TZ JST-9
 
-USER monakadev
-WORKDIR $HOME/monaka/src
+RUN useradd --user-group --create-home --shell /bin/bash ${USER_NAME}
+ENV HOME=/home/${USER_NAME}
+
+USER ${USER_NAME}
+WORKDIR ${HOME}/monaka/src
+COPY --chown=${USER_NAME}:${USER_GROUP} ./src ./
 RUN npm install
 
+# CMD ["dumb-init", "node", "app.js"]
 CMD ["dumb-init", "node", "--watch", "app.js"]
 
-FROM base AS local
-USER root
-RUN apt-get install -y --no-install-recommends \
-  libxtst6 libdbus-glib-1-2 libx11-xcb1 \
-  libgtk-3.0 libgbm-dev libnss3 libatk-bridge2.0-0 libasound2 \
-  libgstreamer1.0-0 libegl1 libevent-2.1-7 libopus0 libxslt1.1 \
-  libopengl0 libglx0 libwoff1 libharfbuzz-icu0 libgstreamer-plugins-base1.0-0 \
-  libgstreamer-gl1.0-0 libopenjp2-7 libwebpdemux2 libenchant-2-2 libsecret-1-0 \
-  libhyphen0 libmanette-0.2-0 libatomic1 libgles2 gstreamer1.0-libav
-
-USER monakadev
-WORKDIR $HOME/monaka/src
-RUN npm i -D @playwright/test \
-  && npx playwright install
+FROM build AS devlop
