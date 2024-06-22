@@ -18,3 +18,5 @@ jobs:
           node-version: "20.x"
       - run: npm ci
       - run: npm run build
+        env:
+          APP_NAME: ${{ vars.APP_NAME }}
