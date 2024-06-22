@@ -5,12 +5,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app1
     steps:
       - uses: actions/checkout@v4
       - name: Install
         uses: actions/setup-node@v4
         with:
           node-version: "20.x"
-          path: src
-      - run: npm install
+      - run: npm ci
       - run: npm run build
