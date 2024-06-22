@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./app1
+        working-directory: src
     steps:
       - uses: actions/checkout@v4
       - name: Install
