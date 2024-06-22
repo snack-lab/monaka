@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node --watch --env-file .env app.js",
     "inspect": "eslint --inspect-config",
-    "build": "node --env-file .env copy.js",
+    "build": "node copy.js",
+    "dev": "node --env-file .env copy.js",
     "secretlint": "secretlint '**/*'"
   },
   "devDependencies": {
