@@ -1,5 +1,3 @@
-# Document
-# https://docs.github.com/ja/actions
 name: node
 
 on: [push]
