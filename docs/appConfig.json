@@ -1,0 +1,15 @@
+{
+  "appVersion": "1.0.0",
+  "scope": "/monaka/",
+  "cache": {
+    "main": {
+      "name": "monaka",
+      "list": []
+    }
+  },
+  "messages": {
+    "sw": {
+      "update": "アップデート通知:新しいバージョンがリリスされました。アップデートを実施します。"
+    }
+  }
+}

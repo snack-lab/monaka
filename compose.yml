@@ -1,18 +1,29 @@
 services:
   monaka:
-    container_name: ${APP_CONTAINER_NAME}
+    container_name: ${APP_CONTAINER_NAME:-monaka_app}
     build:
       context: .
       dockerfile: ./docker/nodejs/Dockerfile
-      target: devlop
-    user: monakadev
+      args:
+        NODE_VERSION: ${NODE_VERSION:-20}
+        UID: ${UID:-1001}
+        GID: ${GID:-1001}
+        USERNAME: ${USERNAME:-monakadev}
+      target: development
+    user: ${USERNAME:-monakadev}
     environment:
       NODE_ENV: ${NODE_ENV}
     ports:
       - "8888:3000"
     volumes:
-      - monaka-src-store:/home/monakadev/monaka/src
-      - monaka-docs-store:/home/monakadev/monaka/docs
+      - type: volume
+        source: monaka-src-store
+        target: /home/monakadev/monaka/src
+      - type: volume
+        source: monaka-docs-store
+        target: /home/monakadev/monaka/docs
+        volume:
+          nocopy: true
       - /home/monakadev/monaka/src/node_modules
     logging:
       driver: json-file
