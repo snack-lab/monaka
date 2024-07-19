@@ -1,4 +1,4 @@
-ARG NODE_VERSION=22
+ARG NODE_VERSION=20
 FROM node:${NODE_VERSION}-bullseye-slim as build
 
 LABEL monaka.version="1.0.0"

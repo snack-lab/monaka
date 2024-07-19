@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./docker/nodejs/Dockerfile
       args:
-        NODE_VERSION: ${NODE_VERSION:-22}
+        NODE_VERSION: ${NODE_VERSION:-20}
         UID: ${UID:-1001}
         GID: ${GID:-1001}
         USERNAME: ${USERNAME:-monakadev}
