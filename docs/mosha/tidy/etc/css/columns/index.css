@@ -1,0 +1,37 @@
+h1 {
+    text-align: center;
+}
+
+.sample11 {
+    /* width: 1024px; */
+}
+
+.sample1 div {
+    columns: 2 450px;
+    gap: 1rem;
+}
+
+.sample1 p {
+    margin :0;
+}
+
+.sample2 ul {
+    columns: 3 100px;
+}
+
+.sample3.cards {
+    columns: 4 100px;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+
+.sample3 .card {
+    background: #eaeaea;
+    /* break-inside: avoid; */
+    margin-block-end: 1.5rem;
+    padding: 1rem;
+}
+
+.sample3 .card img {
+    max-width: 100%;
+}
