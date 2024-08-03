@@ -1,6 +1,6 @@
 // Dedicated workerからDedicated Workerを作ることはできる。
 // 現在はShared Worker,Service WorkerからDedicated Worker作ったり、また逆も作ることはできない。
-const child_worker = new Worker('child_worker.js');
+const child_worker = new Worker('child_worker.js', { type: "module"});
 
 self.addEventListener('message', (event) => {
   console.debug('[Worker] Message received from main script: ', event.data.message);
@@ -31,4 +31,3 @@ child_worker.addEventListener('error', (error) => {
 child_worker.addEventListener('messageerror', (event) => {
   console.debug(event);
 })
-

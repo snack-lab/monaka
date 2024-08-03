@@ -1,0 +1,18 @@
+.roles {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.roles > div {
+  margin-left: 0.3rem;
+}
+
+label {
+  margin-right: 1rem;
+}
+
+.error-msg {
+  color: #dc3545;
+}

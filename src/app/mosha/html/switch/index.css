@@ -1,0 +1,4 @@
+input[type="checkbox"][switch] {
+  accent-color: blue;
+  transform: scale(1.25);
+}
