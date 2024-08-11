@@ -1,6 +1,6 @@
 const getData = async () => {
 
-  const url = new URL(`${location.origin}/monaka/lab/webworker/worker/sample.json`);
+  const url = new URL(`${location.origin}/monaka/mosha/webapi/webworker/worker/sample.json`);
 
   const header = new Headers([
     ['Content-Type','application/json']
