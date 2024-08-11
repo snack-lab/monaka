@@ -1,12 +1,10 @@
 ARG NODE_VERSION=20
-FROM node:${NODE_VERSION}-bullseye-slim as build
+FROM node:${NODE_VERSION}-bullseye-slim AS build
 
 LABEL monaka.version="1.0.0"
 
-ARG UID=1001
-ARG GID=1001
-ARG USERNAME=monakadev
-ARG USERGROUP=${USERNAME}
+ARG USER_NAME=node
+ARG USER_GROUP=${USER_NAME}
 
 RUN apt update \
   && apt upgrade -y \
@@ -19,17 +17,13 @@ RUN apt update \
   && npm i -g npm
 
 RUN localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
-ENV LANG ja_JP.UTF-8
-ENV LANGUAGE ja_JP:ja
-ENV LC_ALL ja_JP.UTF-8
-ENV TZ JST-9
-
-RUN groupadd -g ${GID} ${USERGROUP} \
-    && useradd -u ${UID} -g ${USERGROUP} -m -s /bin/bash ${USERNAME}
-ENV HOME=/home/${USERNAME}
+ENV LANG=ja_JP.UTF-8
+ENV LANGUAGE=ja_JP:ja
+ENV LC_ALL=ja_JP.UTF-8
+ENV TZ=JST-9
 
 USER ${USER_NAME}
-WORKDIR ${HOME}/monaka/src
+WORKDIR /workspaces/monaka/src
 COPY --chown=${USER_NAME}:${USER_GROUP} ./src ./
 RUN npm install
 

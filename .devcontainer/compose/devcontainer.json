@@ -2,8 +2,8 @@
   "name": "monaka",
   "dockerComposeFile": ["../../compose.yml"],
   "service": "monaka",
-  "remoteUser": "monakadev",
-  "workspaceFolder": "/home/monakadev/monaka",
+  "remoteUser": "node",
+  "workspaceFolder": "/workspaces/monaka",
   "shutdownAction": "stopCompose",
   "customizations": {
     "vscode": {
