@@ -1,11 +1,11 @@
 if ("EyeDropper" in window) {
-  let abortControler = null;
+  let abortController = null;
   const selectBtn = document.getElementById("select_btn");
   selectBtn.addEventListener("click", async () => {
-    abortControler = new AbortController();
+    abortController = new AbortController();
     const eyeDropper = new EyeDropper();
     try {
-      // const result = await eyeDropper.open({ signal: abortControler.signal });
+      // const result = await eyeDropper.open({ signal: abortController.signal });
       const result = await eyeDropper.open();
       console.log(result);
     } catch (err) {
@@ -13,7 +13,7 @@ if ("EyeDropper" in window) {
     }
 
     setTimeout(() => {
-      abortControler.abort();
+      abortController.abort();
     }, 1000);
   });
 }
