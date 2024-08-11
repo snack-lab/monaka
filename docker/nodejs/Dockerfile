@@ -23,13 +23,8 @@ ENV LC_ALL=ja_JP.UTF-8
 ENV TZ=JST-9
 
 USER ${USER_NAME}
-
-# copy
-WORKDIR /workspaces/monaka
-COPY --chown=${USER_NAME}:${USER_GROUP} ./ ./
-
-# insall
 WORKDIR /workspaces/monaka/src
+COPY --chown=${USER_NAME}:${USER_GROUP} ./src ./
 RUN npm install
 
 # CMD ["dumb-init", "node", "app.js"]
