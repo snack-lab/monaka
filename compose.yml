@@ -16,12 +16,12 @@ services:
     volumes:
       - type: volume
         source: monaka-src-store
-        target: /workspaces/monaka/src
-      - type: volume
-        source: monaka-docs-store
-        target: /workspaces/monaka/docs
-        volume:
-          nocopy: true
+        target: /workspaces/monaka
+      # - type: volume
+      #   source: monaka-docs-store
+      #   target: /workspaces/monaka/docs
+      #   volume:
+      #     nocopy: true
       - /workspaces/monaka/src/node_modules
     logging:
       driver: json-file
@@ -37,11 +37,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: ./src
+      device: ./
       o: bind
-  monaka-docs-store:
-    driver: local
-    driver_opts:
-      type: none
-      device: ./docs
-      o: bind
+  # monaka-docs-store:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: ./docs
+  #     o: bind
