@@ -78,7 +78,7 @@
   "initializeCommand": "echo 'Initializing'",
   "onCreateCommand": "echo 'onCreate'",
   "updateContentCommand": "echo 'updateContent'",
-  "postCreateCommand": "cd ./src && npm install",
+  "postCreateCommand": "cd ./src && sudo chown node:node node_modules && npm install",
   "postStartCommand": "echo 'postStart'",
   "postAttachCommand": "echo 'postAttach'",
   "features": {
