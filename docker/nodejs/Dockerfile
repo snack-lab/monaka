@@ -23,6 +23,7 @@ ENV LC_ALL=ja_JP.UTF-8
 ENV TZ=JST-9
 
 USER ${USER_NAME}
+ENV HOME=/home/${USER_NAME}
 WORKDIR /workspaces/monaka/src
 COPY --chown=${USER_NAME}:${USER_GROUP} ./src ./
 RUN npm install
