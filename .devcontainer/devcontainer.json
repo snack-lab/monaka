@@ -1,6 +1,6 @@
 {
   "name": "monaka",
-  "dockerComposeFile": ["../../compose.yml"],
+  "dockerComposeFile": ["../compose.yml"],
   "service": "monaka",
   "workspaceFolder": "/workspaces/monaka",
   "shutdownAction": "stopCompose",
