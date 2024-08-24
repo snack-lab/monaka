@@ -76,6 +76,7 @@ h3 {
   }
 }
 
+/* style query */
 @container style(--featured: true) {
   article {
     background: rgb(219, 247, 226);
