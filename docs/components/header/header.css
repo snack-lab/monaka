@@ -1,0 +1,40 @@
+.header {
+  align-items: center;
+  background: #1a6ccc;
+  display: flex;
+  height: 75px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+
+  --text-color: #fff;
+
+  h1 {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0 2%;
+
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+  }
+
+  nav {
+    margin-left: auto;
+    padding: 0 2%;
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+
+      li {
+        color: var(--text-color);
+        font-size: 1.4rem;
+        margin: 0 0 0 15px;
+      }
+    }
+  }
+}
