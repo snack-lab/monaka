@@ -1,13 +1,9 @@
 {
   "name": "monaka",
-  "build": {
-    "dockerfile": "../../docker/nodejs/Dockerfile.dev"
-  },
+  "dockerComposeFile": ["../../compose.ubuntu.yml"],
+  "service": "monaka",
   "workspaceFolder": "/workspaces/monaka",
-  "shutdownAction": "stopContainer",
-  "remoteEnv": {
-    "NODE_ENV": "development"
-  },
+  "shutdownAction": "stopCompose",
   "customizations": {
     "vscode": {
       "settings": {
@@ -64,26 +60,9 @@
         "mechatroner.rainbow-csv",
         "ms-ceintl.vscode-language-pack-ja",
         "yzhang.markdown-all-in-one",
-        "vscode-icons-team.vscode-icons",
+        "ms-playwright.playwright",
         "bierner.markdown-preview-github-styles"
       ]
     }
-  },
-  "portsAttributes": {
-    "3000": {
-      "label": "Monaka Remote",
-      "onAutoForward": "notify"
-    }
-  },
-  "initializeCommand": "echo 'Initializing'",
-  "onCreateCommand": "echo 'onCreate'",
-  "updateContentCommand": "echo 'updateContent'",
-  "postCreateCommand": "cd ./src && sudo chown node:node node_modules && npm install",
-  "postStartCommand": "echo 'postStart'",
-  "postAttachCommand": "echo 'postAttach'",
-  "features": {
-    "ghcr.io/devcontainers-contrib/features/gh-cli:1": {},
-    "ghcr.io/devcontainers-contrib/features/jshint:2": {},
-    "ghcr.io/devcontainers-contrib/features/node-asdf:0": {}
   }
 }
