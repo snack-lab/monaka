@@ -1,0 +1,17 @@
+@supports(selector(:has(+ *))) {
+  .supported {
+    display: block;
+  }
+
+  .unsupported {
+    display: none;
+  }
+}
+
+/*
+ * 親要素が特定のパラメータを持つ子を含んでいるかどうかを確認
+ * 子要素に.newを含むitem
+ */
+.item:has(.new) {
+  color: brown;
+}
