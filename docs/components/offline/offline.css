@@ -1,0 +1,47 @@
+.offline {
+  bottom: 0;
+  display: none;
+  font-size: 1rem;
+  height: 45px;
+  padding: 4px 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.offline.open {
+  align-items: center;
+  animation-duration: 0.3s;
+  animation-name: fadedown;
+  display: flex;
+  justify-content: center;
+}
+
+.offline.open.alert::before,
+.offline.open.warning::before {
+  content: "";
+  display: block;
+  height: 3vw;
+  width: 5vw;
+}
+
+.offline.open.alert {
+  background: #df0000;
+  color: #fff;
+}
+
+.offline.open.warning {
+  background: #f3f729;
+  color: #6f6f6f;
+}
+
+@keyframes fadedown {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
