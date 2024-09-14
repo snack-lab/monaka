@@ -12,7 +12,7 @@ const home = `${location.origin}/monaka/`;
 const checkOnline = async () => {
   try {
   const response = await fetch(home);
-    if (response.status >= 200 && response.status < 500) {
+    if (response.status >= 200 && response.status < 403) {
       window.location.replace(home);
       return;
     }
