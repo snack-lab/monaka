@@ -30,7 +30,7 @@ class InstallElement extends HTMLElement {
 
   #template = () => {
     const template = document.createElement("template");
-    const html = `<button type="button" class="install">install</button>`;
+    const html = `<button type="button" class="install">Install</button>`;
     template.setHTMLUnsafe(html);
     return template.content.cloneNode(true);
   }

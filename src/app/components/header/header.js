@@ -19,6 +19,7 @@ class HeaderElement extends HTMLElement {
         <h1><a href="/monaka">Monaka</a></h1>
          <nav>
            <ul>
+             <li><a href="./about.html">Abount</a></li>
              <li><m-install></m-install></li>
            </ul>
          </nav>
