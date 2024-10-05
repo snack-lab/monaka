@@ -1,4 +1,6 @@
 .header {
+  --text-color: #fff;
+
   align-items: center;
   background: #1a6ccc;
   display: flex;
@@ -7,18 +9,16 @@
   top: 0;
   width: 100%;
 
-  --text-color: #fff;
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
 
   h1 {
     color: var(--text-color);
     font-size: 1.6rem;
     margin: 0;
     padding: 0 2%;
-
-    a {
-      color: var(--text-color);
-      text-decoration: none;
-    }
   }
 
   nav {
