@@ -35,7 +35,6 @@
           }
         },
         "terminal.integrated.defaultProfile.linux": "bash",
-        "window.zoomLevel": -1,
         "workbench.iconTheme": "vscode-icons",
         "workbench.colorTheme": "Default Dark Modern",
         "workbench.startupEditor": "newUntitledFile",
