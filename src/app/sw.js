@@ -26,7 +26,8 @@ self.addEventListener("fetch", (event) => {
         event.respondWith(mod.cacheFirst(event.request));
       }
     } else {
-      if (!requestURL.pathname.includes("/mosha/")) {
+      // console.debug(event.request.destination);
+      if (!requestURL.pathname.includes("/mosha/") && appConfig.cache.main.list.includes(requestURL.pathname)) {
         event.respondWith(mod.cacheFirst(event.request));
       }
     }
@@ -48,4 +49,12 @@ self.addEventListener("notificationclick", (event) => {
 
   const promiseChain = clients.openWindow(url);
   event.waitUntil(promiseChain);
+});
+
+self.addEventListener("periodicsync", (event) => {
+  const resourceTag = appConfig.periodicSync.tags.resources.name;
+
+  if (event.tag == `${resourceTag}`) {
+    event.waitUntil(Promise.all([mod.clearResourcesCaches(), mod.addResources()]));
+  }
 });

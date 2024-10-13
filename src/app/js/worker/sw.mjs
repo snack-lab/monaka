@@ -9,6 +9,12 @@ export const addResources = async () => {
   return cache.addAll(resources);
 };
 
+export const clearResourcesCaches = async () => {
+  const cache = await caches.open(`${appConfig.cache.main.name}`);
+  const responses = await cache.matchAll();
+  responses.forEach(async response => await cache.delete(new URL(response.url).pathname));
+};
+
 export const deleteOldCaches = async (cacheStorageName, cacheList) => {
   const cacheKeepList = new Set(cacheList);
   const cache = await caches.open(cacheStorageName);
