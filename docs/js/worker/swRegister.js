@@ -9,19 +9,21 @@ const sw = registration.installing || registration.waiting || registration.activ
 
 if (sw) {
   if (sw.state === "activated") {
-    // if ("periodicSync" in registration) {
-    //   const status = await navigator.permissions.query({ name: "periodic-background-sync" });
-    //   if (status.state === "granted") {
-    //     const tags = await registration.periodicSync.getTags();
-    //     if (!tags.includes(`${appConfig.periodicSync.tags.resources.name}`)) {
-    //       try {
-    //         await registration.periodicSync.register(`${appConfig.periodicSync.tags.resources.name}`, {
-    //           minInterval: appConfig.periodicSync.tags.resources.minInterval,
-    //         });
-    //       } catch (error) {}
-    //     }
-    //   }
-    // }
+    if ("periodicSync" in registration) {
+      const status = await navigator.permissions.query({ name: "periodic-background-sync" });
+      if (status.state === "granted") {
+        const tags = await registration.periodicSync.getTags();
+        const targetName = appConfig.periodicSync.tags.resources.name;
+        const interval = parseInt(appConfig.periodicSync.tags.resources.minInterval, 10);
+        if (!tags.includes(`${targetName}`)) {
+          try {
+            await registration.periodicSync.register(`${targetName}`, {
+              minInterval: interval,
+            });
+          } catch (error) {}
+        }
+      }
+    }
 
     registration.addEventListener("updatefound", () => {
       const installWorker = registration.installing;

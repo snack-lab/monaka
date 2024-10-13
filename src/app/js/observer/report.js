@@ -27,16 +27,16 @@ observer.observe();
 
 if (typeof self.reportError === "function") {
   window.onerror = (message, source, lineno, colno, error) => {
-    console.debug(`message: ${message}`);
-    console.debug(`source: ${source}`);
-    console.debug(`lineno: ${lineno}`);
-    console.debug(`colno: ${colno}`);
-    console.debug(`error: ${error}`);
+    // console.debug(`message: ${message}`);
+    // console.debug(`source: ${source}`);
+    // console.debug(`lineno: ${lineno}`);
+    // console.debug(`colno: ${colno}`);
+    // console.debug(`error: ${error}`);
     return true;
   };
 
   self.addEventListener("error", (error) => {
-    console.debug(error);
+    // console.debug(error);
   });
 
   const reportError = new Error("エラーだよ");

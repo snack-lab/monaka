@@ -1,7 +1,11 @@
+import { isRecommend } from "./js/modules/env.js";
+await isRecommend();
+
 import "./components/header/header.js";
 import "./components/pagetop/pagetop.js";
 import "./components/loader/loader.js";
 import "./components/offline/offline.js";
+import "./components/estimate/estimate.js";
 
 import "./js/worker/swRegister.js";
 import "./js/observer/report.js";

@@ -5,13 +5,57 @@
     "main": {
       "name": "monaka",
       "list": [
-        "/monaka/offline.html"
+        "/monaka/404.html",
+        "/monaka/about.html",
+        "/monaka/app.js",
+        "/monaka/app.webmanifest",
+        "/monaka/appConfig.json",
+        "/monaka/clear.html",
+        "/monaka/favicon.ico",
+        "/monaka/icon.svg",
+        "/monaka/index.html",
+        "/monaka/offline.html",
+        "/monaka/robots.txt",
+        "/monaka/sw.js",
+        "/monaka/components/estimate/estimate.js",
+        "/monaka/components/header/header.css",
+        "/monaka/components/header/header.js",
+        "/monaka/components/install/install.css",
+        "/monaka/components/install/install.js",
+        "/monaka/components/loader/loader.css",
+        "/monaka/components/loader/loader.js",
+        "/monaka/components/offline/offline.css",
+        "/monaka/components/offline/offline.js",
+        "/monaka/components/pagetop/pagetop.css",
+        "/monaka/components/pagetop/pagetop.js",
+        "/monaka/css/app.css",
+        "/monaka/images/icons/icons-192.png",
+        "/monaka/images/icons/icons-192.svg",
+        "/monaka/images/icons/icons-512.png",
+        "/monaka/images/icons/icons-512.svg",
+        "/monaka/images/icons/maskable_icon_x192.png",
+        "/monaka/images/icons/maskable_icon_x512.png",
+        "/monaka/images/screenshots/screenshots.png",
+        "/monaka/js/modules/env.js",
+        "/monaka/js/modules/utilities.js",
+        "/monaka/js/navigation.js",
+        "/monaka/js/observer/report.js",
+        "/monaka/js/worker/sw.mjs",
+        "/monaka/js/worker/swRegister.js"
       ]
     }
   },
   "messages": {
     "sw": {
-      "update": "アップデート通知:新しいバージョンがリリスされました。アップデートを実施します。"
+      "update": "新しいバージョンがリリスされました。アップデートを実施します。"
+    }
+  },
+  "periodicSync": {
+    "tags": {
+      "resources": {
+        "name": "get-resources-sync30d",
+        "minInterval": "30 * 24 * 60 * 60 * 1000"
+      }
     }
   }
 }
