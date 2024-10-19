@@ -1,16 +1,19 @@
-import { isRecommend } from "./js/modules/env.js";
+import { isRecommend } from "env.js";
 await isRecommend();
 
-import "./components/header/header.js";
-import "./components/pagetop/pagetop.js";
-import "./components/loader/loader.js";
-import "./components/offline/offline.js";
-import "./components/estimate/estimate.js";
+import "header";
+import "pagetop";
+import "loader";
+import "offline";
+import "estimate";
 
-import "./js/worker/swRegister.js";
-import "./js/observer/report.js";
+import "swRegister";
+import "report";
+import "launch_file_handler";
+import "window_overlay";
 // import "./js/navigation.js";
 
+// edit title
 const std = window.matchMedia('(display-mode: standalone)');
 if(std.matches) {
     document.title = `${document.title} (app)`;
