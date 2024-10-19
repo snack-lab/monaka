@@ -1,4 +1,7 @@
-@media all and (display-mode: minimal-ui), (display-mode: standalone), (display-mode: fullscreen) {
+@media all and (display-mode: minimal-ui),
+  (display-mode: standalone),
+  (display-mode: fullscreen),
+  (display-mode: window-controls-overlay) {
   .install {
     display: none;
   }

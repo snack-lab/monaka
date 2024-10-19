@@ -40,6 +40,20 @@
   "launch_handler": {
     "client_mode": "navigate-existing"
   },
+  "file_handlers": [
+    {
+      "action": "/monaka/upload.html",
+      "accept": {
+        "text/plain": [".txt"]
+      }
+    },
+    {
+      "action": "/monaka/upload.html",
+      "accept": {
+        "text/csv": [".csv"]
+      }
+    }
+  ],
   "screenshots": [
     {
       "src": "images/screenshots/screenshots.png",

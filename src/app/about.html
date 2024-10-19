@@ -11,6 +11,26 @@
 <link rel="icon" href="./icon.svg" type="image/svg+xml">
 <link rel="manifest" href="app.webmanifest">
 <link rel="stylesheet" href="./css/app.css">
+<script type="importmap">
+{
+  "imports": {
+    "header" : "./components/header/header.js",
+    "pagetop": "./components/pagetop/pagetop.js",
+    "loader": "./components/loader/loader.js",
+    "offline": "./components/offline/offline.js",
+    "estimate": "./components/estimate/estimate.js",
+    "launch_file_handler": "./js/modules/launch_file_handler.js",
+    "window_overlay": "./js/modules/window_overlay.js",
+    "swRegister": "./js/worker/swRegister.js",
+    "report": "./js/observer/report.js"
+  },
+  "scopes": {
+     "/monaka/": {
+        "env.js": "./js/modules/env.js"
+     }
+  }
+}
+</script>
 <script type="module" src="./app.js"></script>
 </head>
 

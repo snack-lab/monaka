@@ -17,6 +17,7 @@
         "/monaka/offline.html",
         "/monaka/robots.txt",
         "/monaka/sw.js",
+        "/monaka/upload.html",
         "/monaka/components/estimate/estimate.js",
         "/monaka/components/header/header.css",
         "/monaka/components/header/header.js",
