@@ -1,4 +1,5 @@
 import "../install/install.js";
+import "../search/search.js";
 
 import sheet from "./header.css" with { type: "css" };
 
@@ -19,6 +20,7 @@ class HeaderElement extends HTMLElement {
         <h1><a href="/monaka">Monaka</a></h1>
          <nav>
            <ul>
+             <li><m-search></m-search</li>
              <li><a href="./about.html">Abount</a></li>
              <li><m-install></m-install></li>
            </ul>
