@@ -1,21 +1,4 @@
-:root {
-  color-scheme: light dark;
-}
+@import url("./base/base.css") layer(base);
+@import url("./base/pwa.css") layer(base);
 
-html,
-body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-@media (display-mode: window-controls-overlay) {
-  font-size: 28px;
-}
+@layer base;
