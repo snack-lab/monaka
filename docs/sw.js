@@ -13,6 +13,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     Promise.all([
       mod.deleteOldCaches(mainCache, mainCacheList),
+      mod.enableNavigationPreload(),
       self.clients.claim(),
     ])
   );
@@ -36,19 +37,55 @@ self.addEventListener("fetch", (event) => {
 
 self.addEventListener("push", (event) => {
   const options = event.data.json();
-  self.registration.showNotification(options.notification.title, {
-    body: options.notification.body,
-    data: options.notification.data,
-  });
+
+  const show = async () => {
+    await self.registration.showNotification(options.notification.title, {
+      body: options.notification.body,
+      icon: options.notification.image,
+      badge: options.notification.badge,
+      tag: options.notification.tag,
+      data: options?.data,
+    });
+
+    const notifications = await self.registration.getNotifications();
+    await swModule.setBadge(notifications.length);
+  };
+
+  event.waitUntil(show());
 });
 
 self.addEventListener("notificationclick", (event) => {
-  const clickedNotification = event.notification;
-  const url = event.notification?.data?.link;
-  clickedNotification.close();
+  const openChat = async () => {
+    const clickedNotification = event.notification;
+    clickedNotification.close();
 
-  const promiseChain = clients.openWindow(url);
-  event.waitUntil(promiseChain);
+    let url = new URL(`${location.origin}${appConfig.scope}`).href;
+    if (event.notification?.data?.link) {
+      url = new URL(event.notification?.data?.link).href;
+    }
+
+    const notifications = await self.registration.getNotifications();
+    await swModule.setBadge(notifications.length);
+
+    await clients.matchAll({ type: "window", includeUncontrolled: true }).then((clientsArr) => {
+      const hadWindowToFocus = clientsArr.some((windowClient) =>
+        windowClient.url === url ? (windowClient.focus(), true) : false,
+      );
+      if (!hadWindowToFocus)
+        clients.openWindow(url).then((windowClient) => (windowClient ? windowClient.focus() : null));
+    });
+  };
+
+  event.waitUntil(openChat());
+});
+
+self.addEventListener("notificationclose", (event) => {
+  const close = async () => {
+    const notifications = await self.registration.getNotifications();
+    await swModule.setBadge(notifications.length);
+  };
+
+  event.waitUntil(close());
 });
 
 self.addEventListener("periodicsync", (event) => {
