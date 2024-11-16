@@ -1,4 +1,5 @@
 import appConfig from "../../appConfig.json" with { type: "json" };
+import { sendSubscription, clearBadge, clearNotifications } from "./sw.mjs";
 
 const swScope = appConfig.scope;
 const swURL = new URL(`${location.origin}${swScope}sw.js`);
@@ -36,38 +37,31 @@ if (sw) {
     });
   }
 
-  if ("PushManager" in window && "Notification" in window) {
+  if ("Notification" in window) {
+    await clearBadge();
+    await clearNotifications();
+
     const notificationsStatus = await navigator.permissions.query({ name: "notifications" });
-    // const pushStatus = await navigator.permissions.query({ name: "push", userVisibleOnly: true });
     if (notificationsStatus.state === "prompt") {
       const permission = await Notification.requestPermission();
-      // const subscribeOptions = {
-      //   userVisibleOnly: true,
-      //   applicationServerKey: "",
-      // };
-      // const pushSubscription = await registration.pushManager.subscribe(subscribeOptions);
-      // const subscriptionObject = {
-      //   endpoint: pushSubscription.endpoint,
-      //   keys: {
-      //     p256dh: pushSubscription.getKey("p256dh"),
-      //     auth: pushSubscription.getKey("auth"),
-      //   },
-      // };
-      // const subscriptionObjectToo = JSON.stringify(subscriptionObject);
-
       if (permission === "granted") {
-        const title = "monaka";
-        const options = {
-          body: "Welcome to Monaka!",
-          data: {
-            link: new URL(`${location.origin}${swScope}`).href
-          }
-        };
-        const dummyNotification = new Notification(title, options);
-        dummyNotification.onclick = (event) => event.target.close();
+        try {
+          // await sendSubscription();
+
+          const title = "monaka";
+          const options = {
+            body: "Welcome to Monaka!",
+              data: {
+                link: new URL(`${location.origin}${swScope}`).href
+              }
+            };
+            new Notification(title, options);
+        } catch (err) {
+          alert(`${appConfig.messages.sw.failedInitPush}`);
+          console.debug("An error occurred while retrieving token.", err);
+        } finally {
+        }
       }
-    } else if (notificationsStatus.state === "granted") {
     }
   }
-
 }

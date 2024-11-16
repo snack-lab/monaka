@@ -1,5 +1,5 @@
 {
-  "appVersion": "1.0.0",
+  "appVersion": "1.1.0",
   "scope": "/monaka/",
   "cache": {
     "main": {
@@ -19,6 +19,8 @@
         "/monaka/sw.js",
         "/monaka/upload.html",
         "/monaka/components/estimate/estimate.js",
+        "/monaka/components/fullscreen/fullscreen.css",
+        "/monaka/components/fullscreen/fullscreen.js",
         "/monaka/components/header/header.css",
         "/monaka/components/header/header.js",
         "/monaka/components/install/install.css",
@@ -52,7 +54,8 @@
   },
   "messages": {
     "sw": {
-      "update": "新しいバージョンがリリスされました。アップデートを実施します。"
+      "update": "新しいバージョンがリリスされました。アップデートを実施します。",
+      "failedInitPush": "プッシュ通知の登録に失敗しました。"
     }
   },
   "periodicSync": {
