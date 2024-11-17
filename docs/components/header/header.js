@@ -1,5 +1,6 @@
 import "../install/install.js";
 import "../search/search.js";
+import "../fullscreen/fullscreen.js";
 
 import sheet from "./header.css" with { type: "css" };
 
@@ -21,6 +22,7 @@ class HeaderElement extends HTMLElement {
          <nav>
            <ul>
              <li><m-search></m-search</li>
+             <li><m-fullscreen></m-fullscreen</li>
              <li><a href="./about.html">Abount</a></li>
              <li><m-install></m-install></li>
            </ul>

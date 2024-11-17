@@ -1,4 +1,7 @@
 :root {
+  --brand: #1a6ccc;
+
+  accent-color: var(--brand);
   color-scheme: light dark;
 }
 
@@ -10,12 +13,59 @@
   padding: 0;
 }
 
+:focus-visible {
+  outline-color: var(--brand);
+}
+
+::selection {
+  background-color: var(--brand);
+}
+
+::marker {
+  color: var(--brand);
+}
+
+:is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button) {
+    color: var(--brand);
+}
+
+.accented {
+  accent-color: var(--brand);
+}
+
+[color-scheme="light"] {
+  color-scheme: light;
+}
+
+[color-scheme="dark"] {
+  color-scheme: dark;
+}
+
 html,
 body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 16px;
+  scrollbar-color: #1a6ccc Canvas;
 }
 
 :where([hidden]:not([hidden="until-found"])) {
   display: none !important;
+}
+
+@media (scripting: none) {
+  body *:not(noscript) {
+    display: none;
+  }
+
+  noscript {
+    color: var(--brand);
+    display: grid;
+    height: 100svh;
+    place-content: center;
+    width: 100svw;
+  }
 }
