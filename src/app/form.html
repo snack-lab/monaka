@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="monaka home">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://snack-lab.github.io/monaka/">
+<link rel="icon" href="./favicon.ico" sizes="32x32">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="manifest" href="app.webmanifest">
+<link rel="stylesheet" href="./css/app.css">
+<link rel="stylesheet" href="./css/pages/form.css">
+<script type="importmap">
+{
+  "imports": {
+    "header" : "./components/header/header.js",
+    "pagetop": "./components/pagetop/pagetop.js",
+    "loader": "./components/loader/loader.js",
+    "offline": "./components/offline/offline.js",
+    "estimate": "./components/estimate/estimate.js",
+    "launch_file_handler": "./js/modules/launch_file_handler.js",
+    "window_overlay": "./js/modules/window_overlay.js",
+    "swRegister": "./js/worker/swRegister.js",
+    "report": "./js/observer/report.js"
+  },
+  "scopes": {
+     "/monaka/": {
+        "env.js": "./js/modules/env.js"
+     }
+  }
+}
+</script>
+<script type="module" src="./app.js"></script>
+</head>
+
+<body>
+  <noscript>To enable JavaScript, please follow the instructions below for your browser type.</noscript>
+
+  <m-header></m-header>
+
+  <main>
+    <section id="main-form">
+      <form method="post" action="" onsubmit="return false;">
+        <div class="input">
+          <label for="name" class="label">text</label>
+          <input type="text" value="" name="name" id="name" class="" required minlength="2" maxlength="10" pattern="^[A-Za-z]{2,10}+$" placeholder="name" spellcheck="true" autocomplete="name" inputmode="text" enterkeyhint="next" list="example_name">
+          <span></span>
+          <datalist id="example_name">
+            <option value="A"></option>
+            <option value="B"></option>
+            <option value="C"></option>
+          </datalist>
+          <div class="error"></div>
+        </div>
+        <div class="input">
+          <label for="content" class="label">textarea</label>
+          <textarea id="content"></textarea>
+          <span></span>
+          <div class="error"></div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- <m-estimate></m-estimate> -->
+  <m-pagetop></m-pagetop>
+  <m-loader></m-loader>
+  <m-offline></m-offline>
+</body>
+
+</html>

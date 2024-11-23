@@ -5,6 +5,7 @@
   background: #1a6ccc;
   display: flex;
   height: 75px;
+  margin-bottom: 1rem;
   position: sticky;
   top: 0;
   width: 100%;

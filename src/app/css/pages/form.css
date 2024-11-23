@@ -1,0 +1,44 @@
+input[type="text"] {
+  line-height: 1.5;
+  max-width: 20lh;
+  width: 10lh;
+}
+
+textarea {
+  display: block;
+  field-sizing: content;
+  line-height: 1.5;
+  max-height: 5lh;
+  max-width: 20lh;
+  width: 10lh;
+}
+
+/*
+ * 縦書きモード
+ */
+.rl {
+  writing-mode: vertical-rl;
+}
+
+#main-form {
+  display: grid;
+  place-content: center;
+
+  .input {
+    margin: 1rem 0;
+  }
+
+  .label {
+    display: block;
+
+    + input:user-valid + span::before {
+      color: rgb(0, 128, 0);
+      content: "✔";
+    }
+
+    + input:user-invalid + span::before {
+      color: rgb(255, 77, 99);
+      content: "❌";
+    }
+  }
+}
