@@ -5,6 +5,12 @@
   color-scheme: light dark;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #434343;
+  }
+}
+
 *,
 *::before,
 *::after {

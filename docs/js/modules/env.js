@@ -61,7 +61,8 @@ const isRecommend = async () => {
   const isBrowserRecommend = brand ? true : false;
   const isApiSupported = isAvailable.length === availableTest.length;
   const isPermission = hasPermission.length === permissionTest.length;
-  const isRecommend = isBrowserRecommend && isPermission && isApiSupported ? true : false;
+  const isImportMap = HTMLScriptElement.supports('importmap') ? true : false;
+  const isRecommend = isBrowserRecommend && isPermission && isApiSupported && isImportMap ? true : false;
 
   console.debug("isRecommend", isRecommend);
 

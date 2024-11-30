@@ -2,7 +2,7 @@
   --text-color: #fff;
 
   align-items: center;
-  background: #1a6ccc;
+  background: var(--brand);
   display: flex;
   height: 75px;
   margin-bottom: 1rem;
