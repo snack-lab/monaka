@@ -14,12 +14,12 @@ updates:
         patterns:
           - "*"
 
-  - package-ecosystem: "docker"
-      directories:
-        - "/docker/nodejs"
-      open-pull-requests-limit: 1
-      schedule:
-        interval: weekly
-        day: saturday
-        time: "10:00"
-        timezone: "Asia/Tokyo"
+  # - package-ecosystem: "docker"
+  #     directories:
+  #       - "/docker/nodejs"
+  #     open-pull-requests-limit: 1
+  #     schedule:
+  #       interval: weekly
+  #       day: saturday
+  #       time: "10:00"
+  #       timezone: "Asia/Tokyo"
