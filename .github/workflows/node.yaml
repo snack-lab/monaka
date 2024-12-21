@@ -24,7 +24,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: ["20.x", "22.x"]
+        node-version: ["22.x"]
     timeout-minutes: 5
     permissions:
       contents: read
