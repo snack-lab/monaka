@@ -13,6 +13,7 @@ updates:
       npm-dependencies:
         patterns:
           - "*"
+
   - package-ecosystem: "docker"
       directories:
       - "/docker"
