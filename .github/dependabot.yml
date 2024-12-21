@@ -2,6 +2,7 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/src"
+    target-branch: "dev"
     open-pull-requests-limit: 1
     schedule:
       interval: "weekly"
@@ -14,9 +15,18 @@ updates:
           - "*"
   - package-ecosystem: "docker"
     directory: "/docker/nodejs"
+    target-branch: "dev"
     open-pull-requests-limit: 1
     schedule:
       interval: "weekly"
       day: "saturday"
       time: "10:00"
       timezone: "Asia/Tokyo"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "dev"
+    open-pull-requests-limit: 1
+    schedule:
+      interval: "weekly"
+      time: "10:00"
+      timezone: Asia/Tokyo
