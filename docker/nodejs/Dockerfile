@@ -12,19 +12,23 @@ RUN apt update \
   dumb-init \
   locales \
   git \
+  && localedef -f UTF-8 -i ja_JP ja_JP.UTF-8 \
   && apt clean \
   && rm -rf /var/lib/apt/lists/* \
   && npm i -g npm
 
-RUN localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+# locale
 ENV LANG=ja_JP.UTF-8
 ENV LANGUAGE=ja_JP:ja
 ENV LC_ALL=ja_JP.UTF-8
 ENV TZ=JST-9
 
+# user
 USER ${USER_NAME}
 ENV HOME=/home/${USER_NAME}
 WORKDIR /workspaces/monaka/src
+
+# copy src
 COPY --chown=${USER_NAME}:${USER_GROUP} ./src ./
 RUN npm install
 
