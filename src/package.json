@@ -15,9 +15,9 @@
     "secretlint": "secretlint '**/*'"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^0.7.0",
+    "@eslint/config-inspector": "^0.7.1",
     "@secretlint/secretlint-rule-preset-recommend": "^9.0.0",
-    "eslint": "^9.17.0",
+    "eslint": "^9.18.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "express": "^4.21.2",
