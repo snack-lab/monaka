@@ -50,6 +50,7 @@
         }
       },
       "extensions": [
+        "ms-ceintl.vscode-language-pack-ja",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "stylelint.vscode-stylelint",
@@ -64,7 +65,9 @@
         "ms-ceintl.vscode-language-pack-ja",
         "yzhang.markdown-all-in-one",
         "vscode-icons-team.vscode-icons",
-        "bierner.markdown-preview-github-styles"
+        "bierner.markdown-preview-github-styles",
+        "github.copilot",
+        "github.copilot-chat"
       ]
     }
   },

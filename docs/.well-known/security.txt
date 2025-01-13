@@ -1,0 +1,10 @@
+Contact:
+Expires:
+
+#
+Preferred-Languages: jp, en
+Policy:
+Acknowledgements:
+Hiring:
+Canonical: https://snack-lab.github.io/monaka/.well-known/security.txt
+Encryption:

@@ -1,16 +1,36 @@
 name: node
 
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main", "dev"]
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  CARGO_TERM_COLOR: always
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: ["22.x"]
+    timeout-minutes: 5
+    permissions:
+      contents: read
     defaults:
       run:
         working-directory: src
-    strategy:
-      matrix:
-        node-version: ["20.x", "22.x"]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
