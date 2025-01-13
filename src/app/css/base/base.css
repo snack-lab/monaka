@@ -1,14 +1,8 @@
 :root {
-  --brand: #1a6ccc;
+  color-scheme: light dark;
+  --brand: light-dark(#1a6ccc,#434343);
 
   accent-color: var(--brand);
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brand: #434343;
-  }
 }
 
 *,
