@@ -14,7 +14,7 @@ import "window_overlay";
 // import "./js/navigation.js";
 
 // edit title
-const std = window.matchMedia('(display-mode: standalone)');
-if(std.matches) {
-    document.title = `${document.title} (app)`;
-}
+// const std = window.matchMedia('(display-mode: standalone)');
+// if(std.matches) {
+//     document.title = `${document.title} (app)`;
+// }
