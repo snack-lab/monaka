@@ -1,4 +1,12 @@
+:root {
+  /* あらゆる::backdropがアクセスできるカスタムプロパティ */
+  --backdrop-color: #333;
+}
+
 dialog {
+  /* dialogの::backdropがアクセスできるカスタムプロパティ */
+  --backdrop-color: #c9c9c9;
+
   transition: display 1s allow-discrete, overlay 1s allow-discrete, opacity 1s;
   opacity: 0;
 
@@ -9,4 +17,8 @@ dialog {
       opacity: 0;
     }
   }
+}
+
+::backdrop {
+  background-color: var(--backdrop-color);
 }
