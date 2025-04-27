@@ -1,0 +1,25 @@
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 50px 1fr 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 50px auto;
+  max-width: 960px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  display: grid;
+  gap: 1rem;
+  grid-row: auto / span 3;
+  grid-template-rows: subgrid;
+  padding: 0.4rem;
+}
+
+.card header {
+  background-color: #f0f0f0;
+}
+
+.card footer {
+  background-color: #8e8d8d;
+}
