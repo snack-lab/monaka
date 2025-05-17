@@ -17,7 +17,7 @@
   "devDependencies": {
     "@eslint/config-inspector": "^1.0.2",
     "@secretlint/secretlint-rule-preset-recommend": "^9.3.2",
-    "eslint": "^9.26.0",
+    "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "express": "^5.1.0",
@@ -33,6 +33,6 @@
   "dependencies": {
     "express-rate-limit": "^7.5.0",
     "express-session": "^1.18.1",
-    "express-slow-down": "^2.0.3"
+    "express-slow-down": "^2.1.0"
   }
 }
