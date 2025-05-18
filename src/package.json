@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.0.2",
+    "@html-eslint/eslint-plugin": "^0.40.3",
     "@secretlint/secretlint-rule-preset-recommend": "^9.3.2",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
