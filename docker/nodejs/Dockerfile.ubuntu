@@ -48,5 +48,3 @@ COPY --from=build --chown=${USER_NAME}:${USER_GROUP} /app/node_modules ./node_mo
 
 # CMD ["dumb-init", "node", "app.js"]
 CMD ["dumb-init", "node", "--watch", "app.js"]
-
-FROM build AS development
