@@ -32,6 +32,16 @@ services:
     #   watch:
     #     - action: rebuild
     #       path: src/app.js
+  e2e:
+    container_name: ${E2E_CONTAINER_NAME:-monaka_e2e}
+    build:
+      context: .
+      dockerfile: docker/playwright/Dockerfile
+      args:
+        PLAYWRIGHT_VERSION: ${PLAYWRIGHT_VERSION:-1.52.0}
+    user: ${E2E_USER_NAME:-pwuser}
+    ports:
+      - "3000:3000"
 volumes:
   monaka-src-store:
     driver: local
