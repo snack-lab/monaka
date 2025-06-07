@@ -12,7 +12,8 @@
     "inspect": "eslint --inspect-config",
     "build": "node copy.js",
     "dev": "node --env-file .env copy.js",
-    "secretlint": "secretlint '**/*'"
+    "secretlint": "secretlint '**/*'",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.1.0",
