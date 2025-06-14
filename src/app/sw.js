@@ -28,7 +28,7 @@ self.addEventListener("fetch", (event) => {
       }
     } else {
       // console.debug(event.request.destination);
-      if (!requestURL.pathname.includes("/mosha/") && appConfig.cache.main.list.includes(requestURL.pathname)) {
+      if (appConfig.cache.main.list.includes(requestURL.pathname)) {
         event.respondWith(mod.cacheFirst(event.request));
       }
     }
