@@ -61,9 +61,9 @@ export const cacheFirst = async (request) => {
     }
 
     const headers = new Headers(networkResponse.headers);
-    headers.set("cross-origin-resource-policy", "same-origin");
-    headers.set("cross-origin-opener-policy", "same-origin");
-    headers.set("cross-origin-embedder-policy", "require-corp");
+    headers.set("Cross-Origin-Resource-Policy", "same-origin");
+    headers.set("Cross-Origin-Opener-Policy", "same-origin");
+    headers.set("Cross-Origin-Embedder-Policy", "require-corp");
 
     const additionalResponse = new Response(networkResponse.body, {
       status: networkResponse.status,
