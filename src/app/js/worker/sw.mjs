@@ -61,6 +61,11 @@ export const cacheFirst = async (request) => {
     }
 
     const headers = new Headers(networkResponse.headers);
+    headers.set("Cache-control", "no-store");
+    headers.set("Pragma", "no-cache");
+    headers.set("Expires", "0");
+    headers.set("X-Content-Type-Options", "nosniff");
+    headers.set("X-Frame-Options", "DENY");
     headers.set("Cross-Origin-Resource-Policy", "same-origin");
     headers.set("Cross-Origin-Opener-Policy", "same-origin");
     headers.set("Cross-Origin-Embedder-Policy", "require-corp");
