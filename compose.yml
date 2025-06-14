@@ -28,17 +28,17 @@ services:
       options:
         max-size: 1m
         max-file: 3
-    # develop:
-    #   watch:
-    #     - action: rebuild
-    #       path: src/app.js
+    develop:
+      watch:
+        - action: rebuild
+          path: src/app.js
   e2e:
     container_name: ${E2E_CONTAINER_NAME:-monaka_e2e}
     build:
       context: .
       dockerfile: docker/playwright/Dockerfile
       args:
-        PLAYWRIGHT_VERSION: ${PLAYWRIGHT_VERSION:-1.52.0}
+        PLAYWRIGHT_VERSION: ${PLAYWRIGHT_VERSION:-v1.53.0}
     user: ${E2E_USER_NAME:-pwuser}
     ports:
       - "9323:9323"
