@@ -43,7 +43,12 @@ services:
         PLAYWRIGHT_VERSION: ${PLAYWRIGHT_VERSION:-1.52.0}
     user: ${E2E_USER_NAME:-pwuser}
     ports:
-      - "3000:3000"
+      - "9323:9323"
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+        max-file: 3
 volumes:
   monaka-src-store:
     driver: local
