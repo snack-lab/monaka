@@ -60,8 +60,19 @@ export const cacheFirst = async (request) => {
       return networkResponse;
     }
 
-    await putInCache(mainCache, request, networkResponse.clone());
-    return networkResponse;
+    const headers = new Headers(networkResponse.headers);
+    headers.set("cross-origin-resource-policy", "same-origin");
+    headers.set("cross-origin-opener-policy", "same-origin");
+    headers.set("cross-origin-embedder-policy", "require-corp");
+
+    const additionalResponse = new Response(networkResponse.body, {
+      status: networkResponse.status,
+      statusText: networkResponse.statusText,
+      headers: headers,
+    });
+
+    await putInCache(mainCache, request, additionalResponse.clone());
+    return additionalResponse;
   } catch (error) {
     return new Response("Network error happened", {
       status: 408,

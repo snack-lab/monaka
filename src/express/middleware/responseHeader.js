@@ -6,9 +6,9 @@ const header = {
   "X-Content-Type-Options": "nosniff",
   "X-Frame-Options": "DENY",
   "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-  "Cross-Origin-Resource-Policy": "same-origin",
-  "Cross-Origin-Opener-Policy": "same-origin",
-  "Cross-Origin-Embedder-Policy": "require-corp",
+  // "Cross-Origin-Resource-Policy": "same-origin",
+  // "Cross-Origin-Opener-Policy": "same-origin",
+  // "Cross-Origin-Embedder-Policy": "require-corp",
   "Permissions-Policy": "screen-wake-lock=(self), local-fonts=(self), window-management=(self)",
 
   // "Reporting-Endpoints": 'main-endpoint="http://localhost:8080/monaka"',
