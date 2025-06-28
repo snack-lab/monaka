@@ -1,4 +1,4 @@
-ARG PLAYWRIGHT_VERSION=v1.53.0
+ARG PLAYWRIGHT_VERSION=v1.53.1
 
 FROM mcr.microsoft.com/playwright:${PLAYWRIGHT_VERSION}-noble
 
@@ -20,4 +20,4 @@ WORKDIR /home/pwuser
 USER pwuser
 RUN npx playwright install
 
-CMD ["npx", "-y", "playwright@1.53.0", "run-server", "--port", "3000", "--host", "0.0.0.0"]
+CMD ["npx", "-y", "playwright@1.53.1", "run-server", "--port", "3000", "--host", "0.0.0.0"]
