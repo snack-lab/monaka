@@ -1,0 +1,47 @@
+services:
+  monaka:
+    container_name: ${APP_CONTAINER_NAME:-monaka_app}
+    build:
+      context: .
+      dockerfile: ./docker/nodejs/Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION:-22}
+        USER_NAME: ${USER_NAME:-node}
+      target: development
+    user: ${USER_NAME:-node}
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+    ports:
+      - "8888:3000"
+    volumes:
+      - type: volume
+        source: monaka-src-store
+        target: /workspaces/monaka/src
+      - type: volume
+        source: monaka-docs-store
+        target: /workspaces/monaka/docs
+        volume:
+          nocopy: true
+      - /workspaces/monaka/src/node_modules
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+        max-file: 3
+    develop:
+      watch:
+        - action: rebuild
+          path: src/app.js
+volumes:
+  monaka-src-store:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./src
+      o: bind
+  monaka-docs-store:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./docs
+      o: bind
