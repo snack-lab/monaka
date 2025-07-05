@@ -1,10 +1,9 @@
 {
   "name": "monaka",
-  "build": {
-    "dockerfile": "../../docker/nodejs/Dockerfile.dev"
-  },
+  "dockerComposeFile": ["../../compose.codespaces.yml"],
+  "service": "monaka",
   "workspaceFolder": "/workspaces/monaka",
-  "shutdownAction": "stopContainer",
+  "shutdownAction": "stopCompose",
   "remoteEnv": {
     "NODE_ENV": "development"
   },
@@ -80,12 +79,9 @@
   "initializeCommand": "echo 'Initializing'",
   "onCreateCommand": "echo 'onCreate'",
   "updateContentCommand": "echo 'updateContent'",
-  "postCreateCommand": "cd ./src && sudo chown node:node node_modules && npm install",
+  "postCreateCommand": "echo postCreate",
   "postStartCommand": "echo 'postStart'",
   "postAttachCommand": "echo 'postAttach'",
   "features": {
-    "ghcr.io/devcontainers-contrib/features/gh-cli:1": {},
-    "ghcr.io/devcontainers-contrib/features/jshint:2": {},
-    "ghcr.io/devcontainers-contrib/features/node-asdf:0": {}
   }
 }
