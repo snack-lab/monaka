@@ -83,5 +83,8 @@
   "postStartCommand": "echo 'postStart'",
   "postAttachCommand": "echo 'postAttach'",
   "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    }
   }
 }
