@@ -19,24 +19,24 @@
     "@eslint/config-inspector": "^1.1.0",
     "@html-eslint/eslint-plugin": "^0.42.0",
     "@playwright/test": "^1.54.1",
-    "@secretlint/secretlint-rule-preset-recommend": "^10.2.0",
-    "@types/node": "^24.0.13",
+    "@secretlint/secretlint-rule-preset-recommend": "^10.2.1",
+    "@types/node": "^24.0.15",
     "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
     "express": "^5.1.0",
     "jest": "^30.0.4",
     "npm-check-updates": "^18.0.1",
     "prettier": "^3.6.2",
-    "secretlint": "^10.2.0",
-    "stylelint": "^16.21.1",
+    "secretlint": "^10.2.1",
+    "stylelint": "^16.22.0",
     "stylelint-config-standard": "^38.0.0",
     "stylelint-order": "^7.0.0",
     "stylelint-prettier": "^5.0.3"
   },
   "dependencies": {
-    "express-rate-limit": "^7.5.1",
-    "express-session": "^1.18.1",
+    "express-rate-limit": "^8.0.1",
+    "express-session": "^1.18.2",
     "express-slow-down": "^2.1.0"
   }
 }
