@@ -18,10 +18,10 @@
   "devDependencies": {
     "@eslint/config-inspector": "^1.2.0",
     "@html-eslint/eslint-plugin": "^0.45.0",
-    "@playwright/test": "^1.54.2",
+    "@playwright/test": "^1.55.0",
     "@secretlint/secretlint-rule-preset-recommend": "^11.0.2",
     "@types/node": "^24.3.0",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "express": "^5.1.0",
