@@ -20,7 +20,7 @@
     "@html-eslint/eslint-plugin": "^0.48.0",
     "@playwright/test": "^1.56.1",
     "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
-    "@types/node": "^24.10.0",
+    "@types/node": "^24.10.1",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
