@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./docker/nodejs/Dockerfile
       args:
-        NODE_VERSION: ${NODE_VERSION:-22}
+        NODE_VERSION: ${NODE_VERSION:-24}
         USER_NAME: ${USER_NAME:-node}
       target: development
     user: ${USER_NAME:-node}
@@ -38,7 +38,7 @@ services:
       context: .
       dockerfile: docker/playwright/Dockerfile
       args:
-        PLAYWRIGHT_VERSION: ${PLAYWRIGHT_VERSION:-v1.55.0}
+        PLAYWRIGHT_VERSION: ${PLAYWRIGHT_VERSION:-v1.56.1}
     user: ${E2E_USER_NAME:-pwuser}
     ports:
       - "9323:9323"
