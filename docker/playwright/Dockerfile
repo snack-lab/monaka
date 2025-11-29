@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-ARG PLAYWRIGHT_VERSION=v1.56.1
+ARG PLAYWRIGHT_VERSION=v1.57.0
 
 FROM mcr.microsoft.com/playwright:${PLAYWRIGHT_VERSION}-noble
 
@@ -21,4 +21,4 @@ WORKDIR /home/pwuser
 USER pwuser
 RUN npx playwright install
 
-CMD ["npx", "-y", "playwright@1.56.1", "run-server", "--port", "3000", "--host", "0.0.0.0"]
+CMD ["npx", "-y", "playwright@1.57.0", "run-server", "--port", "3000", "--host", "0.0.0.0"]
