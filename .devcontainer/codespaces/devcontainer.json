@@ -1,6 +1,8 @@
 {
   "name": "monaka",
-  "dockerComposeFile": ["../../compose.codespaces.yml"],
+  "dockerComposeFile": [
+    "../../compose.codespaces.yml"
+  ],
   "service": "monaka",
   "workspaceFolder": "/workspaces/monaka",
   "shutdownAction": "stopCompose",
@@ -54,19 +56,15 @@
         "esbenp.prettier-vscode",
         "stylelint.vscode-stylelint",
         "pranaygp.vscode-css-peek",
-        "vunguyentuan.vscode-css-variables",
-        "mikestead.dotenv",
-        "aaron-bond.better-comments",
         "streetsidesoftware.code-spell-checker",
-        "saikou9901.evilinspector",
-        "christian-kohler.path-intellisense",
         "mechatroner.rainbow-csv",
-        "ms-ceintl.vscode-language-pack-ja",
         "yzhang.markdown-all-in-one",
         "vscode-icons-team.vscode-icons",
         "bierner.markdown-preview-github-styles",
         "github.copilot",
-        "github.copilot-chat"
+        "github.copilot-chat",
+        "orta.vscode-jest",
+        "ms-playwright.playwright"
       ]
     }
   },
