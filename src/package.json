@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.4.2",
-    "@html-eslint/eslint-plugin": "^0.52.0",
+    "@html-eslint/eslint-plugin": "^0.52.1",
     "@playwright/test": "^1.57.0",
     "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
     "@types/node": "^25.0.3",
@@ -36,16 +36,16 @@
     "eslint-plugin-prettier": "^5.5.4",
     "express": "^5.2.1",
     "jest": "^30.2.0",
-    "npm-check-updates": "^19.2.0",
+    "npm-check-updates": "^19.2.1",
     "prettier": "^3.7.4",
     "secretlint": "^11.2.5",
     "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1",
-    "stylelint-order": "^7.0.0",
+    "stylelint-order": "^7.0.1",
     "stylelint-prettier": "^5.0.3"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^1.51.2",
+    "@dotenvx/dotenvx": "^1.51.4",
     "express-rate-limit": "^8.2.1",
     "express-session": "^1.18.2",
     "express-slow-down": "^3.0.1"
