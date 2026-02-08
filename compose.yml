@@ -38,7 +38,7 @@ services:
       context: .
       dockerfile: docker/playwright/Dockerfile
       args:
-        PLAYWRIGHT_VERSION: ${PLAYWRIGHT_VERSION:-v1.57.0}
+        PLAYWRIGHT_VERSION: ${PLAYWRIGHT_VERSION:-v1.58.1}
     user: ${E2E_USER_NAME:-pwuser}
     ports:
       - "9323:9323"
