@@ -13,6 +13,11 @@ updates:
       npm-dependencies:
         patterns:
           - "*"
+    cooldown:
+      default-days: 4
+      semver-major-days: 28
+      semver-minor-days: 4
+      semver-patch-days: 1
   - package-ecosystem: "docker"
     directory: "/docker/nodejs"
     target-branch: "dev"
