@@ -52,6 +52,16 @@ body {
   scrollbar-color: #1a6ccc Canvas;
 }
 
+body {
+  font: -apple-system-body;
+}
+
+@supports (font: -apple-system-body) and (not (-webkit-touch-callout: default)) {
+  :root {
+    font-size: 100%;
+  }
+}
+
 :where([hidden]:not([hidden="until-found"])) {
   display: none !important;
 }
