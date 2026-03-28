@@ -16,15 +16,20 @@ class HeaderElement extends HTMLElement {
 
   #template = () => {
     const template = document.createElement("template");
+
+    const list = [
+      { content: `<li><m-search></m-search</li>` },
+      { content: `<li><m-fullscreen></m-fullscreen</li>` },
+      { content: `<li><a href="./about.html">Abount</a></li>` },
+      { content: `<li><m-install></m-install></li>` },
+    ]
+
     const html = `
       <header class="header">
         <h1><a href="/monaka">Monaka</a></h1>
          <nav>
            <ul>
-             <li><m-search></m-search</li>
-             <li><m-fullscreen></m-fullscreen</li>
-             <li><a href="./about.html">Abount</a></li>
-             <li><m-install></m-install></li>
+              ${list.map(item => item.content).join('')}
            </ul>
          </nav>
       </header>
