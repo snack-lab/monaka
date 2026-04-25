@@ -31,7 +31,7 @@
     "@playwright/test": "^1.59.1",
     "@secretlint/secretlint-rule-preset-recommend": "^11.7.1",
     "@types/node": "^25.6.0",
-    "eslint": "^10.2.0",
+    "eslint": "^10.2.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "express": "^5.2.1",
@@ -39,13 +39,13 @@
     "npm-check-updates": "^20.0.2",
     "prettier": "^3.8.3",
     "secretlint": "^11.7.1",
-    "stylelint": "^17.7.0",
+    "stylelint": "^17.8.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.1",
     "stylelint-prettier": "^5.0.3"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^1.61.0",
+    "@dotenvx/dotenvx": "^1.61.6",
     "express-rate-limit": "^8.3.2",
     "express-session": "^1.19.0",
     "express-slow-down": "^3.1.0"
