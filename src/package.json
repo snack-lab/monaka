@@ -23,26 +23,31 @@
     "build": "node copy.js",
     "dev": "node --env-file .env copy.js",
     "secretlint": "secretlint '**/*'",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "dev:hono": "tsx watch src/index.ts"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^2.0.1",
+    "@eslint/config-inspector": "^3.0.3",
+    "@hono/node-server": "^1.19.14",
     "@html-eslint/eslint-plugin": "^0.61.0",
     "@playwright/test": "^1.60.0",
-    "@secretlint/secretlint-rule-preset-recommend": "^12.3.1",
+    "@secretlint/secretlint-rule-preset-recommend": "^13.0.2",
     "@types/node": "^25.9.1",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "express": "^5.2.1",
+    "hono": "^4.12.23",
     "jest": "^30.4.2",
-    "npm-check-updates": "^22.0.1",
+    "npm-check-updates": "^22.2.1",
     "prettier": "^3.8.3",
-    "secretlint": "^12.3.1",
+    "secretlint": "^13.0.2",
     "stylelint": "^17.12.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.1",
-    "stylelint-prettier": "^5.0.3"
+    "stylelint-prettier": "^5.0.3",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.69.1",
