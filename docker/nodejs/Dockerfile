@@ -5,11 +5,14 @@ ARG NODE_VERSION=24
 # build
 FROM node:${NODE_VERSION}-bookworm-slim AS build
 WORKDIR /app
-RUN npm i -g npm
+RUN --mount=type=cache,id=cs_app_node,target=/tmp/.npm \
+  npm_config_cache=/tmp/.npm \
+  npm i -g --no-audit --progress=false npm opencode-ai
 COPY ./src/package.json ./src/package-lock.json ./
-RUN --mount=type=cache,id=monaka_npm_cache,target=/tmp/npm_cache \
-  npm_config_cache=/tmp/npm_cache \
-  npm i --no-progress
+RUN --mount=type=cache,id=monaka_npm,target=/tmp/npm \
+  npm_config_cache=/tmp/npm \
+  npm i --no-audit --progress=false \
+  && npm cache clean --force
 
 # development
 FROM node:${NODE_VERSION}-bookworm-slim AS development

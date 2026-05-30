@@ -1,0 +1,57 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": "notify",
+  "disabled_providers": [
+    "opencode"
+  ],
+  "default_agent": "plan",
+  "watcher": {
+    "ignore": [
+      "node_modules/**"
+    ]
+  },
+  "model": "lmstudio/gemma-4-e4b",
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "In House Agent",
+      "options": {
+        "baseURL": "http://local-llm.silpheed.intra:1234/v1/"
+      },
+      "models": {
+        "google/gemma-4-e4b": {
+          "name": "gemma-4-e4b"
+        }
+      }
+    }
+  },
+  "instructions": [],
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "rm *": "ask",
+      "git *": "allow",
+      "git commit *": "deny",
+      "git push *": "deny",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow",
+      "ssh *": "deny",
+      "scp *": "deny",
+      "sftp *": "deny",
+      "telnet *": "deny",
+      "ftp *": "deny",
+      "npm *": "ask"
+    },
+    "read": {
+      "*": "allow",
+      "*.env.example": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny"
+    },
+    "webfetch": "ask",
+    "external_directory": "deny"
+  }
+}
