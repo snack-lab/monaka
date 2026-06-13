@@ -2,20 +2,14 @@ import express from "express";
 import http from "node:http";
 import path from "node:path";
 import url from "node:url";
-import limiter from "./express/middleware/rateLimit.js";
-import speedLimiter from "./express/middleware/slowDown.js";
 import responseHeader from "./express/middleware/responseHeader.js";
 import csrf from "./express/middleware/csrf.js";
-import session from "./express/middleware/session.js";
 import clear from "./express/routes/clear.js";
 
 const app = express();
 const httpPort = 3000;
 const router = express.Router();
 
-// router.use(speedLimiter);
-// router.use(limiter);
-// router.use(session);
 router.use(csrf);
 router.use(responseHeader);
 

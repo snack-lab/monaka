@@ -16,8 +16,8 @@ RUN --mount=type=cache,id=monaka_npm,target=/tmp/npm \
 
 # development
 FROM node:${NODE_VERSION}-bookworm-slim AS development
-COPY --from=build /usr/local/bin/ /usr/local/bin/
-COPY --from=build /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=build --link /usr/local/bin/ /usr/local/bin/
+COPY --from=build --link /usr/local/lib/node_modules /usr/local/lib/node_modules
 
 LABEL monaka.version="1.0.0"
 
