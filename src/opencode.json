@@ -30,9 +30,21 @@
     "bash": {
       "*": "allow",
       "rm *": "ask",
-      "git *": "allow",
-      "git commit *": "deny",
-      "git push *": "deny",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git branch *": "allow",
+      "git checkout *": "allow",
+      "git add *": "allow",
+      "git commit *": "allow",
+      "git push *": "ask",
+      "git pull *": "ask",
+      "git pull --force *": "deny",
+      "git pull -f *": "deny",
+      "git reset --hard *": "deny",
+      "git clean -fd *": "deny",
+      "git branch -D *": "deny",
+      "git checkout -- *": "deny",
       "*.env": "deny",
       "*.env.*": "deny",
       "*.env.example": "allow",
@@ -53,5 +65,12 @@
     },
     "webfetch": "ask",
     "external_directory": "deny"
+  },
+  "mcp": {
+    "mdn": {
+      "type": "remote",
+      "url": "https://mcp.mdn.mozilla.net/",
+      "enabled": true
+    }
   }
 }
