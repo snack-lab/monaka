@@ -1,8 +1,55 @@
-.devcontainer/
-.github/
-.idx/
-.vscode/
-docker/
+# Git
 .git
 .gitignore
-.npmrc
+.gitattributes
+
+# Docker
+.devcontainer
+.github
+docker
+compose*.yml
+.dockerignore
+Dockerfile*
+
+# IDEs
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+.npm
+
+# Build artifacts
+dist/
+build/
+docs/
+*.tar.gz
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.local
+.env.staging
+.env.production
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Test coverage
+coverage/
+.nyc_output
+
+# Temporary files
+tmp/
+temp/
+.cache
