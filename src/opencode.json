@@ -10,17 +10,17 @@
       "node_modules/**"
     ]
   },
-  "model": "lmstudio/gemma-4-e4b",
+  "model": "dmr/gemma4:E4B",
   "provider": {
-    "lmstudio": {
+    "dmr": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "In House Agent",
+      "name": "Docker Model Runner",
       "options": {
-        "baseURL": "http://local-llm.silpheed.intra:1234/v1/"
+        "baseURL": "http://model-runner.docker.internal/v1/"
       },
       "models": {
-        "google/gemma-4-e4b": {
-          "name": "gemma-4-e4b"
+        "gemma4:E4B": {
+          "name": "gemma4:E4B"
         }
       }
     }

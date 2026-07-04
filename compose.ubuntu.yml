@@ -34,6 +34,10 @@ services:
       watch:
         - action: rebuild
           path: src/app.js
+    models:
+      llm:
+        endpoint_var: AI_MODEL_URL
+        model_var: AI_MODEL_NAME
   e2e:
     container_name: ${E2E_CONTAINER_NAME:-monaka_e2e}
     build:
@@ -62,3 +66,6 @@ volumes:
       type: none
       device: ./docs
       o: bind
+models:
+  llm:
+    model: gemma4:E4B

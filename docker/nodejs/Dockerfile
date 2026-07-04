@@ -7,7 +7,7 @@ FROM node:${NODE_VERSION}-trixie-slim AS build
 WORKDIR /app
 RUN --mount=type=cache,id=cs_app_node,target=/tmp/.npm \
   npm_config_cache=/tmp/.npm \
-  npm i -g --no-audit --progress=false npm opencode-ai
+  npm i -g --no-audit --progress=false npm opencode-ai @github/copilot
 COPY ./src/package.json ./src/package-lock.json ./
 RUN --mount=type=cache,id=monaka_npm,target=/tmp/npm \
   npm_config_cache=/tmp/npm \
