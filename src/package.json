@@ -26,7 +26,7 @@
     "test:e2e": "playwright test"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^3.0.4",
+    "@eslint/config-inspector": "^3.1.0",
     "@html-eslint/eslint-plugin": "^0.64.0",
     "@playwright/test": "^1.61.1",
     "@secretlint/secretlint-rule-preset-recommend": "^13.0.2",
@@ -39,7 +39,7 @@
     "npm-check-updates": "^22.2.9",
     "prettier": "^3.9.5",
     "secretlint": "^13.0.2",
-    "stylelint": "^17.14.0",
+    "stylelint": "^17.14.1",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.1",
     "stylelint-prettier": "^5.0.3",
