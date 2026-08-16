@@ -10,7 +10,7 @@
       "node_modules/**"
     ]
   },
-  "model": "dmr/gemma4:E4B",
+  "model": "dmr/gemma4:e4b-q4_K_M",
   "provider": {
     "dmr": {
       "npm": "@ai-sdk/openai-compatible",
@@ -19,8 +19,8 @@
         "baseURL": "http://model-runner.docker.internal/v1/"
       },
       "models": {
-        "gemma4:E4B": {
-          "name": "gemma4:E4B"
+        "gemma4:e4b-q4_K_M": {
+          "name": "gemma4:e4b-q4_K_M"
         }
       }
     }
@@ -70,6 +70,17 @@
     "mdn": {
       "type": "remote",
       "url": "https://mcp.mdn.mozilla.net/",
+      "enabled": true
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--no-usage-statistics",
+        "--isolated"
+      ],
       "enabled": true
     }
   }
