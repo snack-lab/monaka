@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^3.2.0",
-    "@html-eslint/eslint-plugin": "^0.64.0",
+    "@html-eslint/eslint-plugin": "^0.65.0",
     "@playwright/test": "^1.62.1",
     "@secretlint/secretlint-rule-preset-recommend": "^13.0.4",
     "@types/node": "^26.2.0",
