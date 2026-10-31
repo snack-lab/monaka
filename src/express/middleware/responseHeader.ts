@@ -1,3 +1,5 @@
+import type { Request, Response, NextFunction } from "express";
+
 const header = {
   "Cache-control": "no-store",
   "Pragma": "no-cache",
@@ -15,7 +17,7 @@ const header = {
   // "Content-Security-Policy-Report-Only": "script-src 'none'; object-src 'none'; report-to main-endpoint;",
 };
 
-const responseHeader = (req, res, next) => {
+const responseHeader = (req: Request, res: Response, next: NextFunction) => {
   res.set(header);
   next();
 }

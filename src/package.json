@@ -6,9 +6,9 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "main": "app.js",
+  "main": "app.ts",
   "scripts": {
-    "start": "node --watch --env-file .env app.js",
+    "start": "node --watch --env-file .env app.ts",
     "build": "node copy.js",
     "dev": "node --env-file .env copy.js",
     "secretlint": "secretlint '**/*'",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@playwright/test": "^1.64.1",
     "@secretlint/secretlint-rule-preset-recommend": "^13.1.0",
+    "@types/express": "^5.0.6",
     "@types/node": "^26.6.5",
     "express": "^5.3.0",
     "npm-check-updates": "^23.1.1",

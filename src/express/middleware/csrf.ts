@@ -1,5 +1,7 @@
 const appOrigin = process.env.APP_URL;
-const csrf = (req, res, next) => {
+import type { Request, Response, NextFunction } from "express";
+
+const csrf = (req: Request, res: Response, next: NextFunction) => {
   if (req.method === "post") {
     if (req.headers.origin !== appOrigin) {
       return res.status(400).send("Error");
