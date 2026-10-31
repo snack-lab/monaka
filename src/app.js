@@ -1,7 +1,5 @@
 import express from "express";
 import http from "node:http";
-import path from "node:path";
-import url from "node:url";
 import responseHeader from "./express/middleware/responseHeader.js";
 import csrf from "./express/middleware/csrf.js";
 import clear from "./express/routes/clear.js";
