@@ -29,7 +29,7 @@
     "@eslint/config-inspector": "^3.5.0",
     "@html-eslint/eslint-plugin": "^0.67.0",
     "@playwright/test": "^1.64.1",
-    "@secretlint/secretlint-rule-preset-recommend": "^13.0.7",
+    "@secretlint/secretlint-rule-preset-recommend": "^13.1.0",
     "@types/node": "^26.6.5",
     "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
@@ -38,7 +38,7 @@
     "jest": "^30.5.2",
     "npm-check-updates": "^23.1.1",
     "prettier": "^3.9.10",
-    "secretlint": "^13.0.7",
+    "secretlint": "^13.1.0",
     "stylelint": "^17.16.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.2",
@@ -46,6 +46,6 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^2.38.1"
+    "@dotenvx/dotenvx": "^2.38.2"
   }
 }
