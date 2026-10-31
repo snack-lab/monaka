@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 
-ARG PLAYWRIGHT_VERSION=v1.64.0
+ARG PLAYWRIGHT_VERSION=1.64.1
 
-FROM mcr.microsoft.com/playwright:${PLAYWRIGHT_VERSION}-noble
+FROM mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-noble
 
 RUN rm -f /etc/apt/apt.conf.d/docker-clean; \
   echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
