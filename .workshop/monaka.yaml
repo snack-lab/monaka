@@ -1,0 +1,17 @@
+name: monaka
+base: ubuntu@26.04
+sdks:
+  - name: project-base
+  - name: node
+    channel: 24/stable
+  - name: rust
+    channel: latest/stable
+    slots:
+      caddy:
+        interface: tunnel
+        endpoint: localhost:3000
+  - name: system
+    plugs:
+      caddy:
+        interface: tunnel
+        endpoint: localhost:3000
