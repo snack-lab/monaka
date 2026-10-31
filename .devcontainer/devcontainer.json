@@ -43,21 +43,15 @@
         "workbench.editor.enablePreview": false,
         "notebook.codeActionsOnSave": {
           "source.organizeImports": "explicit",
-          "source.fixAll.eslint": "explicit",
-          "source.fixAll.stylelint": "explicit"
         }
       },
       "extensions": [
         "ms-ceintl.vscode-language-pack-ja",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint",
         "streetsidesoftware.code-spell-checker",
         "mechatroner.rainbow-csv",
         "vscode-icons-team.vscode-icons",
         "bierner.markdown-preview-github-styles",
         "github.copilot-chat",
-        "orta.vscode-jest",
         "ms-playwright.playwright",
         "sst-dev.opencode"
       ]

@@ -6,46 +6,21 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "main": "app.js",
-  "engines": {
-    "node": ">=24.19.0"
-  },
-  "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": ">=24.19.0",
-      "onFail": "error"
-    }
-  },
+  "main": "app.ts",
   "scripts": {
-    "start": "node --watch --env-file .env app.js",
-    "inspect": "eslint --inspect-config",
+    "start": "node --watch --env-file .env app.ts",
     "build": "node copy.js",
     "dev": "node --env-file .env copy.js",
     "secretlint": "secretlint '**/*'",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^3.5.0",
-    "@html-eslint/eslint-plugin": "^0.67.0",
     "@playwright/test": "^1.64.1",
     "@secretlint/secretlint-rule-preset-recommend": "^13.1.0",
+    "@types/express": "^5.0.6",
     "@types/node": "^26.6.5",
-    "eslint": "^10.13.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.7",
     "express": "^5.3.0",
-    "jest": "^30.5.2",
     "npm-check-updates": "^23.1.1",
-    "prettier": "^3.9.10",
-    "secretlint": "^13.1.0",
-    "stylelint": "^17.16.0",
-    "stylelint-config-standard": "^40.0.0",
-    "stylelint-order": "^8.1.2",
-    "stylelint-prettier": "^5.0.3",
     "typescript": "^7.0.2"
-  },
-  "dependencies": {
-    "@dotenvx/dotenvx": "^2.38.2"
   }
 }
