@@ -24,4 +24,4 @@ WORKDIR /home/pwuser
 USER pwuser
 RUN npx playwright install
 
-CMD ["npx", "-y", "playwright@${PLAYWRIGHT_VERSION}", "run-server", "--port", "3000", "--host", "0.0.0.0"]
+CMD ["npx", "-y", "playwright@1.64.1", "run-server", "--port", "3000", "--host", "0.0.0.0"]
