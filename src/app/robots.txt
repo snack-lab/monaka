@@ -1,2 +1,5 @@
 User-Agent: *
 Disallow: /
+
+User-Agent: __usage_ai-training
+Disallow: /
