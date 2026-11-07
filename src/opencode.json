@@ -53,7 +53,8 @@
       "sftp *": "deny",
       "telnet *": "deny",
       "ftp *": "deny",
-      "npm *": "ask"
+      "npm *": "ask",
+      "npx *": "ask"
     },
     "read": {
       "*": "allow",
