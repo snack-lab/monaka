@@ -24,7 +24,7 @@ router.use(csrf);
 router.use(responseHeader);
 
 app.use(`/monaka`, router, express.static(`app`));
-app.get('/monaka/clear', clear);
+app.get('/monaka/clear', limiter, clear);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
